@@ -1,0 +1,84 @@
+html{
+    background-color: #f0f0f0;
+}
+.m-index{
+    height:100%;
+    width:100%;
+    @include flexbox();
+    @include flex-direction(column);
+    header{
+        height:.4rem;
+        width:100%;
+        background: #fabc09;
+        .yo-header{
+            text-align: left;
+            .regret{
+                padding:0 0.1rem;
+                width:1rem;
+                img{
+                    height:100%;
+                    width:100%;
+                }
+            }
+            .title{
+                margin: 0.07rem 0.6rem 0 .94rem;
+                height:0.29rem;
+                line-height:0.29rem;
+                background:#fef1ce;
+                border-radius: .5rem;
+                img{
+                    height:.16rem;
+                    margin-left:.05rem;
+                }
+                span{
+                    font-size: .13rem;
+                    color:#999;
+                    margin:0 0.04rem;
+                    font-weight: 400;
+                }
+            }
+            .affirm{
+                img{
+                    height:.23rem;
+                }
+            }
+        }
+    }
+    section{
+        width:100%;
+        flex: 1;
+        background-color: #f0f0f0;
+        overflow-y: auto;
+    }
+    footer{
+        height:.5rem;
+        width:100%;
+        background: #fff;
+        @include border(1px 0 0 0, #dfdfdf);
+        ul{
+            height:100%;
+            width:100%;
+            @include flexbox();
+            @include align-items(center);
+            a{
+                @include flex();
+                li{
+                    
+                    @include flexbox();
+                    @include flex-direction(column);
+                    @include align-items(center);
+                    @include justify-content(center);
+                    img{
+                        width:.22rem;
+                    }
+                    span{
+                        font-size:13px;
+                        color:#333;
+                        display:inline-block;
+                        line-height:.2rem;
+                    }
+                }
+            }
+        }
+    }
+}

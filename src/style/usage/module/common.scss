@@ -1,0 +1,12 @@
+@import "./../fragment/yo-header";
+
+#root{
+    width:100%;
+    height:100%;
+}
+
+@include yo-header (
+    $name:a,
+    $bgcolor:#fabc09,
+    $border-width:0
+);
