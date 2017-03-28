@@ -1,4 +1,5 @@
 @import "./../fragment/yo-header";
+@import "./../fragment/yo-carousel";
 
 #root{
     width:100%;
@@ -10,3 +11,19 @@
     $bgcolor:#fabc09,
     $border-width:0
 );
+
+@include yo-carousel(
+
+){
+    height:156px;
+    .cont{
+        height:100%;
+        li{
+            height:100%;
+            img{
+               width:100%;
+            }
+        }
+    }
+}
+
