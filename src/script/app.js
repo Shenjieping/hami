@@ -12,6 +12,8 @@ import Cart from './component/cart'
 import User from './component/user'
 import Board from './component/board'
 import List from './component/list'
+import Login from './component/login'
+
 
 
 
@@ -26,6 +28,7 @@ ReactDOM.render(
 	  		<Route path="user" title="用户中心" component={User}></Route>
 	  	</Route>
 	  		<Route path="/list" title="列表" component={List}></Route>
+	  		<Route path="/login" title="列表" component={Login}></Route>
 	  </Router>
   </Provider>,
   document.getElementById('root')

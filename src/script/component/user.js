@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router'
+
 import myOrder from './../../../images/user/mc_01.png';
 import allOrder from './../../../images/user/arrow_right_b.png';
 import payment from './../../../images/user/order-dzf.png';
@@ -31,10 +33,10 @@ class User extends React.Component{
 		return (
 			<div className="m-user">
 				<div className="head">
-					<a href="#" className="login-box ani elastic-in-down">
+					<Link to="/login" className="login-box ani elastic-in-down">
 						<div className="login"></div>
 						<p>点击登录</p>
-					</a>
+					</Link>
 				</div>
 				<div className="myfom">
 					<div className="order">
