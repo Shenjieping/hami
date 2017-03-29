@@ -7,9 +7,6 @@ import { connect } from 'react-redux'
 
 import { mapStateToProps,mapDispatchToProps } from "../redux/store"
 
-
-import { mapStateToProps, mapDispatchToProps } from '../redux/store'
-
 import home from './../../../images/footer/home_w.png'
 import browse from './../../../images/footer/browse_list_w.png'
 import cart from './../../../images/footer/cart_w.png'

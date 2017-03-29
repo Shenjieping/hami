@@ -1,7 +1,6 @@
-
 import { createStore } from 'redux'
 
-function changer(state = {title:'榜单 « 电影 « 豆瓣'}, action) {
+function changer(state = {title:'首页'}, action) {
   switch (action.type) {
     case 'SETTITLE':
       return { title: action.title }
@@ -22,34 +21,8 @@ function mapDispatchToProps(dispatch) {
   return {
     onChange: (action) => dispatch(action)
   }
-
-import { createStore } from "redux"
-
-function changer(state={title:"首页"},action){
-	switch (action.type) {
-		case "SETTITLE":
-			return { 
-				title:action.title
-			}
-		default:
-			return state;
-	}
-}
-//将redux的state转化成组件的props
-function mapStateToProps(state){
-	return {
-		value:state.title
-	}
-}
-//将redux的action转化成组件的props
-function mapDispatchToProps(dispatch){
-	return {
-		onChange:(action) => dispatch(action) 
-	}
-
 }
 
 let store = createStore(changer)
 
 export { mapStateToProps, mapDispatchToProps, store }
-
