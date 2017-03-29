@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from 'react-router'
 
 import fruit from './../../../../images/content/sg.png';
 import face from './../../../../images/content/sc.png';
@@ -15,16 +16,16 @@ class NavList extends React.Component {
 	render(){
 		return (
 			<ul>
-				<li><a href="#"><span><img src={fruit}/></span><p>生鲜果蔬</p></a></li>
-				<li><a href="#"><span><img src={face}/></span><p>米面粮油</p></a></li>
-				<li><a href="#"><span><img src={ofuse}/></span><p>日用百货</p></a></li>
-				<li><a href="#"><span><img src={local}/></span><p>特产零食</p></a></li>
-				<li><a href="#"><span><img src={musim}/></span><p>清真食品</p></a></li>
-				<li><a href="#"><span><img src={cater}/></span><p>餐饮美食</p></a></li>
-				<li><a href="#"><span><img src={server}/></span><p>家政服务</p></a></li>
-				<li><a href="#"><span><img src={sale}/></span><p>批发中心</p></a></li>
-				<li><a href="#"><span><img src={merchant}/></span><p>入驻商家</p></a></li>
-				<li><a href="#"><span><img src={singin}/></span><p>积分签到</p></a></li>
+				<li><Link to="/board"><span><img src={fruit}/></span><p>生鲜果蔬</p></Link></li>
+				<li><Link to="/"><span><img src={face}/></span><p>米面粮油</p></Link></li>
+				<li><Link to="/"><span><img src={ofuse}/></span><p>日用百货</p></Link></li>
+				<li><Link to="/"><span><img src={local}/></span><p>特产零食</p></Link></li>
+				<li><Link to="/"><span><img src={musim}/></span><p>清真食品</p></Link></li>
+				<li><Link to="/"><span><img src={cater}/></span><p>餐饮美食</p></Link></li>
+				<li><Link to="/"><span><img src={server}/></span><p>家政服务</p></Link></li>
+				<li><Link to="/"><span><img src={sale}/></span><p>批发中心</p></Link></li>
+				<li><Link to="/"><span><img src={merchant}/></span><p>入驻商家</p></Link></li>
+				<li><Link to="/"><span><img src={singin}/></span><p>积分签到</p></Link></li>
 			</ul>
 		)
 	}
