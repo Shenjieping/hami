@@ -2,6 +2,9 @@ import React from 'react'
 //import Board from './board'
 import { Link } from 'react-router'
 
+
+import { mapStateToProps, mapDispatchToProps } from '../redux/store'
+
 import home from './../../../images/footer/home_w.png'
 import browse from './../../../images/footer/browse_list_w.png'
 import cart from './../../../images/footer/cart_w.png'
@@ -14,11 +17,6 @@ class Index extends React.Component {
   constructor (props) {
     super(props)
   }
-  
-  handelClick(){
-  	console.log(this)
-  }
-  
   render() {
     return (
       <div className="m-index">
@@ -37,7 +35,7 @@ class Index extends React.Component {
       	</section>
       	<footer>
       		<ul>
-						<Link to="/board" onClick={this.handelClick.bind(this)}><li><img src={home} alt="" /><span>首页</span></li></Link>
+						<Link to="/board"><li><img src={home} alt="" /><span>首页</span></li></Link>
 						<Link to="/kind"><li><img src={browse} alt="" /><span>分类</span></li></Link>
 						<Link to="/cart"><li><img src={cart} alt="" /><span>购物车</span></li></Link>
 						<Link to="/user"><li><img src={member} alt="" /><span>用户中心</span></li></Link>
@@ -48,19 +46,6 @@ class Index extends React.Component {
   }
 
   componentDidMount() {
-   /* fetch('/api/list.php')
-    .then(response=>response.json())
-    // function(response) {
-    //   return response.json()
-    // }
-    .then(res=>{
-      // console.log(res);
-      this.setState({
-        name: <div>{res.name}</div>
-      })
-    })*/
-   
-   
   }
 }
 

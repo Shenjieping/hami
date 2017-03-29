@@ -88,6 +88,8 @@ module.exports = {
   externals: {
     'react': 'window.React',
     'react-dom': 'window.ReactDOM',
-    'react-touter':'window.ReactRouter'
-  }
+    'react-touter':'window.ReactRouter',
+    'redux': 'window.Redux',
+    'react-redux': 'window.ReactRedux'
+  }	
 }
