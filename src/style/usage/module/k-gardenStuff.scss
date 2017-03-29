@@ -1,0 +1,103 @@
+.m-kind{
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(left);
+    .m-kind-left{
+        width:0.8rem;
+        height: 100%;
+        ul{
+            width: 100%;
+            height: 5.57rem;
+            @include flexbox();
+            @include flex-direction(column);
+            @include align-items(center);
+            a{
+                display: block;
+                width: 0.67rem;
+                height: 0.64rem;
+                li{
+                    width: 100%;
+                    height: 100%;
+                    @include flexbox();
+                    @include flex-direction(column);
+                    @include align-items(center);
+                    @include justify-content(center);
+                    img{
+                        width: 0.22rem;
+                        height: 0.22rem;
+                    }
+                    span{
+                        font-size:14px;
+                    }
+                }
+            }
+        }
+    }
+    .m-kind-right{
+        width:5rem;
+        height: 100%;
+        overflow-y: auto;
+        .k-gardenStuff {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            .categroy-child-list{
+                font-size:16px;
+                width: 100%;
+                height: 100%;
+                overflow-y: auto;
+                background-color: #FFF;
+                dt{
+                    width:2.92rem;
+                    height:0.3rem;
+                    background-color: #FCFCFC;
+                    margin:0.1rem;
+                    border-style: solid;
+                    border-color: #F5F5F5;
+                    border-width: 0.001rem 0;
+                    a{
+                        background-color: #FCFCFC;
+                        margin: 0.1rem 0;
+                        border-style: solid;
+                        border-color: #F5F5F5;
+                        border-width: 0.05rem 0;
+                        color: #111;
+                        font-size: 13px;
+                        font-weight: 300;
+                    }
+                }
+                dd{
+                    font-size: 0.12rem;
+                    line-height: 0.3rem;
+                    vertical-align: top;
+                    display: inline-block;
+                    width: 40%;
+                    height: 0.3rem;
+                    padding: 0.01rem;
+                    margin-left: 0.1rem;
+                    border-radius: 0;
+                    a {
+                        display: block;
+                        color: #444;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+        
+    }  
+}  
+@font-face {
+  font-family: 'iconfont';  /* project id 263314 */
+  src: url('//at.alicdn.com/t/font_m0r35w830izfr.eot');
+  src: url('//at.alicdn.com/t/font_m0r35w830izfr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_m0r35w830izfr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_m0r35w830izfr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_m0r35w830izfr.svg#iconfont') format('svg');
+}
