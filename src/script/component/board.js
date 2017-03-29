@@ -6,7 +6,7 @@ import Carousel from './../../component_dev/carousel/src'
 import Scroller from './../../component_dev/scroller/src'
 //import fetchData from '../util/util.fetch.js'
 import { Link } from 'react-router'
-
+//
 class Board extends React.Component{
 	constructor (props) {
 	    super(props)
