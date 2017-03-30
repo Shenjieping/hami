@@ -2,6 +2,65 @@
     width:100%;
     height: 100%;
     overflow: hidden;
+    header{
+        width: 100%;
+        height: 0.37rem;
+        background: #f0f0f0;
+        .header-wrap {
+            width: 100%;
+            height: 0.37rem;
+            display: block;
+            margin: 0.01rem auto;
+            text-align: center;
+            @include flexbox();
+            @include flex-direction(row);
+            @include align-items(center);
+        }
+        .header-l{
+            width: 0.37rem;
+            height: 0.37rem;
+            line-height: 0.37rem;
+            .regret{
+                width: 0.16rem;
+                height: 0.16rem;
+                margin: 0.06rem 0.1rem 0.06rem;
+                opacity: .75;
+            }
+        }
+        .header-inp{
+            width: 2.43rem;
+            height: 0.30rem;
+            line-height: 0.30rem;
+            margin-top: 0.07rem;
+            margin-bottom: 0.02rem;
+            border: 0.01rem #ddd solid;
+            border-radius: 0.1rem;
+            background: #fff;
+            img{
+                width: 0.2rem;
+                height: 0.2rem;
+                float: left; 
+                margin: 0.05rem 0.07rem;
+            }
+            .search-input{
+                width: 1.85rem;
+                height: 0.295rem;
+                display: block;
+                margin-left: 0.3rem;
+            }
+        }
+        .header-r{
+            width: 0.35rem;
+            height: 0.37rem;
+            line-height: 0.37rem;
+            img{
+                width: 0.19rem;
+                height: 0.19rem;
+            }
+        }
+        
+    }
+    
     section{
         width: 100%;
         height: 100%;
@@ -109,6 +168,7 @@
                     display: inline-block;
                     height: 0.97rem;
                     padding: .076rem .076rem 0 0;
+                    
                      a {
                         display: block;
                         color: #111;
@@ -117,7 +177,7 @@
                         display: block;
                         height: 0.40rem;
                         overflow: hidden;
-                                       
+                        
                     }
                     .goods-sale {
                         display: block;
@@ -289,37 +349,155 @@
                 
             }
         }
+        
+        .nctouch-bottom-mask-close{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0.18rem;
+            height: 0.18rem;
+        }             
         .goods-option-value {
             display: block;
-            height: 0.24rem;
+            height: 0.45rem;
             padding: .1rem;
             margin-bottom: .032rem;
-            line-height: 0.24rem;
+            line-height: 0.45rem;
             font-size: .12rem;
             color: #999;
             border-top: solid .01rem #EEE;
             .value-box {
+                width: 0.68rem;
+                height: 0.26rem;
                 display: inline-block;
                 float: right;
                 font-size: 0;
                 border: solid .01rem #CCC;
                 border-radius: .04rem;
-                .value-box span {
-                    display: inline-block;
-                    vertical-align: top;
-                    line-height: 0;
+                .minus {
+                    background-color: #FAFAFA;
+                    border-radius: .2rem 0 0 .2rem;
                 }
-                .value-box span {
+                span {
+                    width: 0.2rem;
+                    height: 0.2rem;
                     display: inline-block;
                     vertical-align: top;
                     line-height: 0;
+                    a {
+                        display: block;
+                        width: .08rem;
+                        height: .08rem;
+                        margin: .06rem;
+                        opacity: .13;
+                        color: #111;
+                    }
+                    .buy-num {
+                        width: 0.24rem;
+                        height: 0.22rem;
+                        padding: 0;
+                        font-size: 0.12rem;
+                        font-weight: lighter;
+                        line-height: 0.22rem;
+                        text-align: center;
+                        border: solid #CCC;
+                        border-width: 0 .01rem;
+                        border-radius: 0;
+                    }
                 }
                 .add {
+                    width: 0.2rem;
+                    height: 0.2rem;
                     background-color: #FAFAFA;
                     border-radius: 0 .2rem .2rem 0;
                 }
             }
             
+        }
+        .goods-option-foot {
+            width: 100%;
+            height: 0.4rem;
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            .otreh-handle {
+                height: 0.4rem;
+                float: left;
+                width: 35%;
+                font-size: 0;
+                background: #fff;
+                @include flexbox();
+                @include flex-direction(row);
+                @include align-items(center);
+                a {
+                    position: relative;
+                    z-index: auto;
+                    display: inline-block;
+                    height: 0.4rem;
+                    text-align: center;
+                    color: #333;
+                    border-top: solid .01rem #DDD;
+                }
+                .kefu {
+                    @include flexbox();
+                    @include flex-direction(column);
+                    @include align-items(center);
+                    width: 44%;
+                    img{
+                        width: 0.18rem;
+                        height: 0.18rem;
+                    }
+                    p {
+                        display: block;
+                        height: .16rem;
+                        font-size: .11rem;
+                        line-height: .16rem;
+                    }
+                }
+                .cart1{
+                    width: 55%;
+                    border-left: solid .01rem #DDD;
+                    img{
+                        width: 0.18rem;
+                        height: 0.18rem;
+                    }
+                    p {
+                        display: block;
+                        height: .16rem;
+                        font-size: .11rem;
+                        line-height: .16rem;
+                    }
+                }
+            }
+             .buy-handle {
+                float: right;
+                width: 65%;
+                font-size: 0;
+                height: 0.4rem;
+                @include flexbox();
+                @include flex-direction(row);
+                @include align-items(center);
+                a {
+                    display: block;
+                    height: 0.4rem;
+                    font-size: .14rem;
+                    font-weight: 600;
+                    line-height: 0.4rem;
+                    color: #FFF;
+                    text-align: center;
+                }
+                .buy-now {
+                    width: 45%;
+                    background-color: #ED5564;
+                }
+                .add-cart2 {
+                    float: right;
+                    width: 55%;
+                    background-color: #FB6E52;
+                }
+            }
         }
     }
 }

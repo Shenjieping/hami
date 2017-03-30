@@ -2,39 +2,58 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from '../redux/store'
 import Modal from '../../component_dev/modal/src'
-
+import { Link } from 'react-router'
 
 import browse_list from "./../../../images/ProductList/browse_list.png"
 import list_more from "./../../../images/ProductList/list_more.png"
 import listcat1 from "./../../../images/ProductList/listcat1.png"
+import list_kefu from "./../../../images/ProductList/list_kefu.png"
+import list_cart from "./../../../images/ProductList/list_cart.png"
+import list_close from "./../../../images/ProductList/list_close.png"
+import list_arrow_left from "./../../../images/ProductList/list_arrow_left.png"
+import search_ico from "./../../../images/ProductList/search_ico.png"
+
 class List extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
 			title: 'abc',
 			list:"",
-			shows:true
+			shows:false
 		}
-		this.haha=this.haha.bind(this)
+		this.xianshi=this.xianshi.bind(this)
+		this.yincang=this.yincang.bind(this)
 	}
 	render() {
 		return(
 			<div className="m-productList">
         <header>
-          <div className="yo-header yo-header-b">
-            <h2 className="title">{this.props.value}</h2>
-            <span className="regret yo-ico">&#xe61f;</span>
-          </div>
+        	<div className="header-wrap">
+	        	<div className="header-l">
+		        	<img className="regret" src={list_arrow_left}/>
+		        </div>
+	        	<div className="header-inp">
+		        	<img className="regret" src={search_ico}/>
+		        	<span className="search-input" id="keyword" placeholder=""></span>
+	        	</div>
+	        	<div className="header-r">		
+		        	<a href="#" className="categroy hide" id="get_child_menu"></a>		
+		        	<a id="header-nav" href="#;">
+			        	<img className="regret" src={list_more}/>
+		        	</a>
+	        	</div>
+        	</div>
         </header>
         <section>
         <Modal show={this.state.shows}>
 		    <div className="nctouch-bottom-mask-block" >
 				<div className="nctouch-bottom-mask-top goods-options-info">
+					<img  onClick={this.yincang} src={list_close} className="nctouch-bottom-mask-close"/>
 					<div className="goods-pic"> <img src="http://www.hamij.com/data/upload/shop/store/goods/114/114_05414390348437765_240.jpg" id="goods-pic"/> </div>
 					<dl> <dt id="goods_name_val">精品菠菜 1kg</dt>
 						<dd className="goods-price">￥<em>11.80</em> <span className="goods-storage" id="goods-storage">库存：50件</span> </dd>
 					</dl>
-					<a href="javascript:void(0);" className="nctouch-bottom-mask-close"><i></i></a>
+					
 				</div>
 				<div className="nctouch-bottom-mask-rolling" id="product_roll">
 					<div className="goods-options-stock">
@@ -50,26 +69,28 @@ class List extends React.Component {
 				<div className="goods-option-value">购买数量
 					<div className="value-box"> 
 						<span className="minus">
-						<a href="javascript:void(0);">&nbsp;</a>		
+						<a href="javascript:void(0);">-</a>		
 						</span> 
 							<span>			
 								<input type="text" pattern="[0-9]*" className="buy-num" id="buynum-120088" value="1"/>		
 							</span> 
 							<span className="add">
-								<a href="javascript:void(0);">&nbsp;</a>		
+								<a href="javascript:void(0);">+</a>		
 							</span> 
 					</div>
 				</div>
 				<div className="goods-option-foot">
 					<div className="otreh-handle">
-						<a href="javascript:void(0);" className="kefu"> <i></i>
+						<a href="javascript:void(0);" className="kefu"> 
+							<img src={list_kefu}/>
 							<p>客服</p>
 						</a>
-						<a href="../tmpl/cart_list.html" className="cart"> <i></i>
+						<a href="../tmpl/cart_list.html" className="cart1"> 
+							<img src={list_cart}/>
 							<p>购物车</p> <span id="cart_count1"><sup>1</sup></span> </a>
 					</div>
 					<div className="buy-handle ">
-						<a href="javascript:void(0);" className="add-cart" id="cart-120088">加入购物车</a>
+						<a href="javascript:void(0);" className="add-cart2" id="cart-120088">加入购物车</a>
 						<a href="javascript:void(0);" className="buy-now" id="buy-now">立即购买</a>
 					</div>
 				</div>
@@ -112,9 +133,14 @@ class List extends React.Component {
       </div>
 		)
 	}
-	haha(){
+	xianshi(){
 		this.setState({
 			shows:true
+		})
+	}
+	yincang(){
+		this.setState({
+			shows:false
 		})
 	}
 	componentDidMount() {
@@ -133,7 +159,7 @@ class List extends React.Component {
        getUrlSearch(window.location.href,"goods_id")
 		var a= getUrlSearch(window.location.href,"goods_id")
 		console.log(a)
-		fetch('http://www.hamij.com/mobile/index.php?act=goods&op=goods_list&gc_id=9&page=8&curpage=1&gc_id=9')
+		fetch('http://www.hamij.com/mobile/index.php?act=goods&op=goods_list&gc_id='+a+'&page=8&curpage=1&gc_id='+a)
 		
 			.then((res) => {
 				return res.json()
@@ -142,7 +168,7 @@ class List extends React.Component {
 				console.log(res.datas.goods_list)
 				var listdata=res.datas.goods_list.map(function(item,index){
 					return (
-						<li className="goods-item" goods_id="120778"> 
+						<Link to={'/productDetail/' + "goods_id?goods_id=" + item.goods_id } className="goods-item" goods_id="120778"> 
 						<span className="goods-pic">					
 							<a href="#" className="list_page" target="_blank">						
 								<img src={item.goods_image_url} className="lazyload"/>					
@@ -158,7 +184,7 @@ class List extends React.Component {
 								<a href="#" className="list_page"> 
 									<span className="goods-price">￥<em>{item.goods_price}</em></span> 
 								</a>
-								<img className="cart2"  onClick={that.haha} src={listcat1}/>
+								<img className="cart2"  onClick={that.xianshi} src={listcat1}/>
 							</dd>
 							<dd className="goods-assist">
 								<a href="#"> 
@@ -173,7 +199,7 @@ class List extends React.Component {
 							</dd> 
 							
 						</dl>
-					</li>
+					</Link>
 			        );
 				})
 				this.setState({

@@ -20,6 +20,7 @@ import departmentStore from './component/kind/departmentStore'
 import Digital from './component/kind/digital'
 
 import List from './component/productList'
+import ProductDetail from './component/productDetail'
 
 ReactDOM.render(
 	<Provider store={store}>
@@ -39,6 +40,7 @@ ReactDOM.render(
 	  		<Route path="user" title="用户中心" component={User}></Route>
 	  	</Route>
 	  	<Route path="/productList/:type" title="商品列表" component={List}></Route>
+	  	<Route path="/productDetail/:type"  component={ProductDetail}></Route>
 	  </Router>
   </Provider>,
   document.getElementById('root')
