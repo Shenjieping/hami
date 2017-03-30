@@ -25,7 +25,7 @@ import Drinks from './component/kind/drinks'
 import departmentStore from './component/kind/departmentStore'
 import Digital from './component/kind/digital'
 
-import List from './component/productList'
+import ProductList from './component/productList'
 
 ReactDOM.render(
 	<Provider store={store}>

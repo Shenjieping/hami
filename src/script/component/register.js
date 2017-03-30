@@ -78,7 +78,7 @@ class Register extends React.Component {
 				</div>
 				<div className="joint">
 					<div className="title">
-						<p>点击以下图标面注册/直接登录</p>
+						<p>点击以下图标免注册/直接登录</p>
 					</div>
 					<div className="logImg">
 						<Link to=""><img src={qq} /></Link>

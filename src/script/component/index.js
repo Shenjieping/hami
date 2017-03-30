@@ -26,12 +26,7 @@ class Index extends React.Component {
       <div className="m-index">
       	<header>
       		<h2>{this.props.value}</h2>
-      		<div className="yo-header yo-header-a">
-	      		<h2 className="title">
-	      			{this.props.value}
-	      		</h2>
-	      		
-      		</div>
+      		
       	</header>
       	<section>
       		{this.props.children}
