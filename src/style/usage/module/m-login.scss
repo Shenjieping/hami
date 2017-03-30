@@ -154,9 +154,9 @@
                 }
             }
         }
-        .tit{
-            height:.5rem;
-            width:1rem;
+        .tit,#title{
+            height:.4rem;
+            width:1.3rem;
             background-color: rgba(0,0,0,0.5);
             color:#fff;
             font-size:.18rem;
@@ -165,10 +165,11 @@
             top:.7rem;
             right:.3rem;
             text-align: center;
-            line-height:.5rem;
+            line-height:.4rem;
             border-radius: 5px;
             display: none;
         }
+        
     }
     .menery{
         height:.2rem;

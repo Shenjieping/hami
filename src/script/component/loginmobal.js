@@ -42,7 +42,13 @@ class Loginmobal extends React.Component{
 	    	var use=$("#username").val();
 	    	var pas=$("#password").val();
 	    	if(use=="" || pas==""){
-	    		alert("请完善信息")
+	    		$("#title").html("请完善信息！")
+	    		$("#title").css({"display":"block"})
+				$("#title").animate({"opacity":"1"},500,function(){
+					$("#title").delay(2000).animate({"opacity":"0"},500,function(){
+						$("#title").css({"display":"none"})
+					})
+				})
 	    	}
 	    })
 	    
@@ -117,6 +123,9 @@ class Loginmobal extends React.Component{
 					</form>
 					<div className="tit">
 						
+					</div>
+					<div id="title">
+					
 					</div>
 				</div>
 				<div className="menery">

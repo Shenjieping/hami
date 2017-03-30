@@ -36,7 +36,13 @@ class Login extends React.Component{
 	    	var use=$("#username").val();
 	    	var pas=$("#password").val();
 	    	if(use=="" || pas==""){
-	    		alert("请完善信息")
+	    		$("#title").html("请完善信息！")
+	    		$("#title").css({"display":"block"})
+				$("#title").animate({"opacity":"1"},500,function(){
+					$("#title").delay(2000).animate({"opacity":"0"},500,function(){
+						$("#title").css({"display":"none"})
+					})
+				})
 	    	}
 	    })
 	    
@@ -89,6 +95,9 @@ class Login extends React.Component{
 							<input type="button" id="button"  name="" value="登录" />
 						</div>
 					</form>
+					<div id="title">
+					
+					</div>
 				</div>
 				<div className="menery">
 					<span><input type="checkbox" id="check" /><label htmlFor="check">七天自动登录</label></span>
