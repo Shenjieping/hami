@@ -1,0 +1,180 @@
+.register{
+    height: 100%;
+    width:100%;
+    header{
+        background:#fabc09;
+        height:.44rem;
+        padding:0px 4%;
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(space-between);
+        .back{
+            height:.16rem;
+            width:.16rem;
+            img{
+                height:100%;
+                width:100%;
+            }
+        }
+        h2{
+            color:#fff;
+            font-weight:normal;
+            font-size:.16rem;
+            font-family: "微软雅黑";
+            height:.44rem;
+            line-height:.44rem;
+        }
+        .log{
+            color:#ed5564;
+            font-size:.13rem;
+        }
+    }
+    .regContent{
+        height:3rem;
+        width:100%;
+        position: relative;
+        margin-top:.2rem;
+        form{
+            height:2.4rem;
+            padding:0px 4%;
+            background: #fff;
+            @include flexbox();
+            @include flex-direction(column);
+            @include align-items(center);
+            div{
+                height:.6rem;
+                border-bottom:1px solid #ccc;
+                @include flexbox();
+                @include align-items(center);
+                @include justify-content(space-between);
+                width:100%;
+                label{
+                    height:.4rem;
+                    width:.7rem;
+                    text-align: left;
+                    color:#a9a9a9;
+                    display:inline-block;
+                    line-height:.4rem;
+                    text-align: right;
+                    font-size:.13rem;
+                    font-family: "微软雅黑";
+                }
+                input{
+                    @include flex();
+                    height:.4rem;
+                    padding:0px .05rem;
+                    border:none;
+                    outline: none;
+                    margin:0px .06rem;
+                    font-size:.16rem;
+                    font-family: "微软雅黑";
+                }
+                p{
+                    height:.28rem;
+                    width:.82rem;
+                    background:#f0f0f0;
+                    font-size:.12rem;
+                    border:1px solid #eee;
+                    border-radius: 3px;
+                    line-height:.28rem;
+                    text-align: center;
+                    color:#999;
+                }
+                &.phone label,&.code label{
+                    letter-spacing: .4em;
+                }
+                &.pas label{
+                    letter-spacing: 1em;
+                }
+                &.repas label{
+                    letter-spacing: .01em;
+                }
+                &.repas{
+                    border:none;
+                }
+                
+            }
+        }
+        .btn{
+            height:.36rem;
+            width:100%;
+            margin-top:.2rem;
+            input{
+                width:94%;
+                height:100%;
+                margin: 0 3%;
+                background:#e3e3e3;
+                border-radius: 5px;
+                border:none;
+                color:#666;
+                letter-spacing: .06rem;
+                font-size: .16rem;
+                font-family: "微软雅黑";
+            }
+           
+        }
+        #title{
+            height:.4rem;
+            width:1.5rem;
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 4px;
+            color:#fff;
+            text-align: center;
+            line-height: .4rem;
+            font-size:.16rem;
+            font-family: "微软雅黑";
+            position: absolute;
+            top:1rem;
+            right:1rem;
+            display: none;
+            opacity: 0;
+        }
+    }
+    .joint{
+        height:0.9rem;
+        width:100%;
+        margin-top:0.3rem;
+        .title{
+            height:.25rem;
+            width:100%;
+            border-bottom:1px solid #ccc;
+            @include flexbox();
+            @include justify-content(center);
+            p{
+                height:.2rem;
+                background-color: #f8f8f8;
+                width:2.1rem;
+                border:1px solid #d1d1d1;
+                color:#ED5564;
+                font-size:.12rem;
+                line-height:.2rem;
+                text-align: center;
+                -webkit-border-radius:5px;
+                border-radius: 5px;
+                margin-top:.17rem;
+            }
+        }
+        .logImg{
+            height:.44rem;
+            width:100%;
+            margin-top:.3rem;
+            @include flexbox();
+            @include justify-content(space-around);
+            a{
+                display:inline-block;
+                height:100%;
+                width:.44rem;
+                border:1px solid #ECAE55;
+                border-radius: 50%;
+                @include flexbox();
+                @include align-items(center);
+                @include justify-content(center);
+                img{
+                    height:75%;
+                    width:75%;
+                }
+            }
+        }
+    }
+    
+}

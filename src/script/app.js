@@ -14,6 +14,12 @@ import Cart from './component/cart'
 import User from './component/user'
 import Board from './component/board'
 
+import List from './component/list'
+import Login from './component/login'
+import Loginmobal from './component/loginmobal'
+import Register from './component/register'
+
+
 import gardenStuff from './component/kind/gardenStuff'
 import Meter from './component/kind/meter'
 import Drinks from './component/kind/drinks'
@@ -40,6 +46,10 @@ ReactDOM.render(
 	  		
 	  		<Route path="productList" title=" " component={ProductList}></Route>
 	  	</Route>
+	  		<Route path="/list" title="列表" component={List}></Route>
+	  		<Route path="/login" title="账号登陆" component={Login}></Route>
+	  		<Route path="/loginmobal" title="手机号登陆" component={Loginmobal}></Route>
+	  		<Route path="/register" title="注册" component={Register}></Route>
 	  </Router>
  </Provider>,
  document.getElementById('root')
