@@ -1,5 +1,325 @@
 .m-productList{
     width:100%;
     height: 100%;
-    overflow-y: auto;
+    overflow: hidden;
+    section{
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        .goods-search-list-nav {
+            display: block;
+            width: 100%;
+            height: 0.39rem;
+            background: rgba(255,255,255,.95);
+            border-bottom: solid .05rem #EEE;
+            position: fixed;
+            z-index: 3;
+            ul {
+                height: 0.34rem;
+                font-size: 0;
+                display: block;
+                width: 85%;
+                float: left;
+                li:first-child {
+                    width: 40%;
+                    a{
+                        color: #f66;
+                    }
+                }
+                li {
+                    vertical-align: top;
+                    display: inline-block;
+                    width: 30%;
+                    a {
+                        font-size: .13rem;
+                        color: #888;
+                        line-height: 0.34rem;
+                        text-align: center;
+                        display: block;
+                        height: 0.34rem;
+                        i {
+                            font-size: 0;
+                            line-height: 0;
+                            vertical-align: middle;
+                            display: inline-block;
+                            width: 0;
+                            height: 0;
+                            margin-left: .04rem;
+                            border-width: .04rem;
+                            border-color: #AAA transparent transparent transparent;
+                            border-style: solid dashed dashed dashed;
+                        }
+                    }
+                }
+            }
+            .browse-mode {
+                display: block;
+                width: 14.5%;
+                float: right;
+                border-left: solid .01rem #EEE;
+                a {
+                    text-align: center;
+                    display: block;
+                    height: 0.34rem;
+                    line-height: 0.34rem;
+                    img{
+                        display: inline-block;
+                        width: 0.24rem;
+                        height: 0.24rem;
+                        opacity: .1;
+                    }
+                }
+            }
+        }
+        .nctouch-main-layout {
+            
+            display: block;
+            margin-top: 0.37rem;
+            overflow: hidden;
+            margin-bottom: 0.04rem;
+            .goods-item {
+                height: 1.05rem;
+                background-color: #FFF;
+                display: block;
+                clear: both;
+                border-bottom: solid 1px #f0f0f0;
+                @include flexbox();
+                @include flex-direction(row);
+                @include align-items(center);
+               
+                .goods-pic {
+                    display: block;
+                    width: 0.924rem;
+                    height: 0.924rem;
+                    padding: .076rem;
+                    flex: 1;
+                    a {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        color: #111;
+                        img{
+                            width: 0.92rem;
+                            height: 0.92rem;
+                        }
+                    }
+                }
+                .goods-info {
+                    flex: 2;
+                    display: inline-block;
+                    height: 0.97rem;
+                    padding: .076rem .076rem 0 0;
+                     a {
+                        display: block;
+                        color: #111;
+                        }        
+                    .goods-name {
+                        display: block;
+                        height: 0.40rem;
+                        overflow: hidden;
+                                       
+                    }
+                    .goods-sale {
+                        display: block;
+                        height: .28rem;
+                        padding: .04rem 0;
+                        overflow: hidden;
+                        .goods-price {
+                            color: #EC5464;
+                            font-size: .14rem;
+                            line-height: .18rem;
+                            display: block;
+                            float: left;
+                        }
+                        img{
+                            width: 0.45rem;
+                            height: 0.27rem;
+                            float: right;
+                        }
+                    }
+                    .goods-assist {
+                        display: block;
+                        height: 0.25rem;
+                        padding-top: .04rem;
+                        overflow: hidden;
+                        .goods-sold {
+                            font-size: .11rem;
+                            line-height: 0.2rem;
+                            color: #999;
+                            display: block;
+                            float: left;
+                            height: 0.2rem;
+                        }
+                        em {
+                            color: #000;
+                            vertical-align: middle;
+                            font-weight: 600;
+                        }
+                        .goods-store {
+                            float: right;
+                            font-size: .11rem;
+                            line-height: 0.2rem;
+                            text-align: right;
+                            width: 60%;
+                            height: 0.2rem;
+                            a {
+                                color: #777;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                 img {
+                                    vertical-align: top;
+                                    display: inline-block;
+                                    width: 0.15rem;
+                                    height: 0.2rem;
+                                    margin: 0 0 0 .05rem;
+                                    opacity: .4;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+.yo-modal{
+    
+    .cont{
+         width: 100%;
+         height: 100%;
+        .nctouch-bottom-mask-block {
+            width: 100%;
+            height: 2.4rem;
+            display: block;
+            position: absolute;
+            z-index:2222022;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            min-height: 2.4rem;
+            background-color: #fff;
+            .nctouch-bottom-mask-top {
+                height: 0.8rem;
+                position: relative;
+                z-index: 1001;
+                display: block;
+                padding: .05rem;
+                border-bottom: solid .01rem #EEE;
+                .goods-pic {
+                    position: absolute;
+                    z-index: 1001;
+                    width: 0.6rem;
+                    height: 0.6rem;
+                    background: #FFF;
+                    img{
+                        width: 0.6rem;
+                        height: 0.6rem;
+                    }
+                }
+                dl {
+                    margin-left: 0.8rem;
+                    dt {
+                        font-size: .12rem;
+                        line-height: .13rem;
+                        margin: .04rem .12rem .08rem 0;
+                    }
+                    .goods-price {
+                        height: 0.2rem;
+                        font-size: .11rem;
+                        color: #DB4453;
+                        font-weight: 600;
+                        line-height: 0.2rem;
+                        .goods-storage {
+                            display: block;
+                            float: right;
+                            font-size: .1rem;
+                            line-height: 0.2rem;
+                            color: #888;
+                        }
+                    }
+                }
+            }
+        }
+        .nctouch-bottom-mask-rolling {
+            overflow: hidden;
+            position: relative;
+            z-index: 1001;
+            .goods-options-stock {
+                height: 0.68rem;
+                padding: .05rem .02rem;
+                dl{
+                    height: 0.58rem;
+                    padding: 0 0.15rem;
+                    dt {
+                        display: block;
+                        height: .18rem;
+                        padding: .02rem 0;
+                        font-size: .12rem;
+                        color: #888;
+                        line-height: .18rem;
+                    }
+                    dd {
+                        width: 100%;
+                        height: 0.36rem;
+                        display: block;
+                        margin-top: 0.1rem;
+                        padding: 0;
+                        .current {
+                            padding: .056rem .106rem;
+                            color: #FFF;
+                            background: #ED5564;
+                            border: none;
+                        }
+                        a {
+                            display: inline-block;
+                            height: .3rem;
+                            padding: .05rem .1rem;
+                            margin-left: .06rem;
+                            margin-bottom: .06rem;
+                            font-size: .11rem;
+                            color: #888;
+                            line-height: .18rem;
+                            background: #FFF;
+                            border: solid .01rem #BBB;
+                            border-radius: .03rem;
+                        }
+                    }
+                }
+                
+            }
+        }
+        .goods-option-value {
+            display: block;
+            height: 0.24rem;
+            padding: .1rem;
+            margin-bottom: .032rem;
+            line-height: 0.24rem;
+            font-size: .12rem;
+            color: #999;
+            border-top: solid .01rem #EEE;
+            .value-box {
+                display: inline-block;
+                float: right;
+                font-size: 0;
+                border: solid .01rem #CCC;
+                border-radius: .04rem;
+                .value-box span {
+                    display: inline-block;
+                    vertical-align: top;
+                    line-height: 0;
+                }
+                .value-box span {
+                    display: inline-block;
+                    vertical-align: top;
+                    line-height: 0;
+                }
+                .add {
+                    background-color: #FAFAFA;
+                    border-radius: 0 .2rem .2rem 0;
+                }
+            }
+            
+        }
+    }
 }

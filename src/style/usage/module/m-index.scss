@@ -2,7 +2,6 @@ html{
     background-color: #f0f0f0;
     font-size: 100px;
 }
-
 .m-index{
     height:100%;
     width:100%;
@@ -11,6 +10,7 @@ html{
     header{
         height:.44rem;
         width:100%;
+        overflow: hidden;
         background: #fabc09;
         .yo-header{
             text-align: left;

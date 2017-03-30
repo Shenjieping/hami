@@ -13,9 +13,12 @@ class Meter extends React.Component{
 		return (
 			<div className="k-gardenStuff">
 				<dl className="categroy-child-list">
+					<Link to="/productList/goods_id?goods_id=120450">11111111111111111111111111</Link>
 					{this.state.list}
+					
 				</dl>
 				{this.props.children}
+				
 			</div>
 		)
 	}
@@ -29,14 +32,14 @@ componentDidMount(){
 			var listchild=res.datas.class_list[0].child.map(function(item,index){
 				return (
 					<dd>
-						<Link to="/productList">{item.gc_name}({item.goods})</Link>
+						<Link to={'/productList/' + "goods_id?goods_id=" + item.gc_id }>{item.gc_name}({item.goods})</Link>
 					</dd>
 		        );
 			})
 			var listdata=res.datas.class_list.map(function(item,index){
 				return (
 					<div>
-						<dt><Link to="/productList">{item.gc_name}({item.goods})</Link></dt>
+						<dt><Link to={'/productList/' + "goods_id?goods_id=" +item.gc_id }>{item.gc_name}({item.goods})</Link></dt>
 						{listchild}
 					</div>
 		        );

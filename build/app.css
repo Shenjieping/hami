@@ -520,6 +520,7 @@ html {
   background-color: #eee;
   color: #212121;
   font-size: 31.25vw;
+
   -webkit-user-select: none;
   user-select: none; }
 
@@ -1412,6 +1413,7 @@ body {
 html {
   background-color: #eee;
   color: #212121;
+<<<<<<< HEAD
   font-size: 31.25vw;
   -webkit-user-select: none;
   user-select: none; }
@@ -2217,6 +2219,7 @@ html {
   background-color: #eee;
   color: #212121;
   font-size: 31.25vw;
+
   -webkit-user-select: none;
   user-select: none; }
 
@@ -2406,12 +2409,23 @@ a {
   vertical-align: middle; }
 
 html {
+<<<<<<< HEAD
   background-color: #f0f0f0;
   font-size: 100px; }
 
 .m-index {
   height: 100%;
   width: 100%;
+=======
+  font-size: 100px; }
+
+body {
+  font-size: 12px; }
+
+.m-index {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -2426,12 +2440,13 @@ html {
     .m-index header .yo-header {
       text-align: left;
       position: relative; }
-      .m-index header .yo-header .regret {
-        padding: 0 0.1rem;
-        width: 1rem; }
-        .m-index header .yo-header .regret img {
-          height: 100%;
-          width: 100%; }
+    height: .4rem;
+    width: 100%;
+    overflow: hidden;
+    background: #fabc09; }
+    .m-index header .yo-header {
+      text-align: left; }
+
       .m-index header .yo-header .kindre {
         padding: 0 0.1rem;
         width: 0.4rem; }
@@ -3455,6 +3470,92 @@ a {
       width: .1px;
       border-bottom: 1px solid #f0f0f0;
       width: 100%;
+  .yo-header .action-touch {
+    opacity: .5; }
+
+/**
+ * yo-header通用或全局扩展
+ */
+#root {
+  width: 100%;
+  height: 100%; }
+
+.m-board {
+  width: 100%;
+  height: auto; }
+  .m-board .banner {
+    height: 156px;
+    width: 100%; }
+    .m-board .banner .yo-carousel > .cont {
+      width: 100%;
+      height: 156px; }
+      .m-board .banner .yo-carousel > .cont > li {
+        width: 100%;
+        height: 156px; }
+        .m-board .banner .yo-carousel > .cont > li > img {
+          width: 100%;
+          height: 156px; }
+  .m-board .list {
+    height: 158px;
+    width: 100%; }
+  .m-board .today {
+    height: 43px;
+    width: 100%; }
+  .m-board .ad {
+    height: 85px;
+    width: 100%; }
+  .m-board .price {
+    height: 30px;
+    width: 100%; }
+  .m-board .price-list {
+    height: 368px;
+    width: 100%; }
+  .m-board .recommend {
+    height: 30px;
+    width: 100%; }
+  .m-board .recommend-list {
+    height: 167px;
+    width: 100%; }
+  .m-board .life {
+    height: 30px;
+    width: 100%; }
+  .m-board .life-list {
+    height: 450px;
+    width: 100%; }
+  .m-board .hothove {
+    height: 30px;
+    width: 100%; }
+  .m-board .hothove-list {
+    height: 210px;
+    width: 100%; }
+  .m-board .ad2 {
+    height: 132px;
+    width: 100%; }
+  .m-board .like {
+    height: 30px;
+    width: 100%; }
+  .m-board .like-list {
+    height: 1836px;
+    width: 100%; }
+
+.m-kind {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  justify-content: left; }
+  .m-kind .m-kind-left {
+    width: 0.8rem;
+    height: 100%; }
+    .m-kind .m-kind-left ul {
+      width: 100%;
+      height: 5.57rem;
       display: -webkit-box;
       display: -webkit-flex;
       display: flex;
@@ -3636,3 +3737,299 @@ a {
         border-bottom: 2px solid #ffcc00; }
 
 /*# sourceMappingURL=app.css.map*/
+      align-items: center; }
+      .m-kind .m-kind-left ul a {
+        display: block;
+        width: 0.67rem;
+        height: 0.64rem; }
+        .m-kind .m-kind-left ul a li {
+          width: 100%;
+          height: 100%;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+          flex-direction: column;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center; }
+          .m-kind .m-kind-left ul a li img {
+            width: 0.22rem;
+            height: 0.22rem; }
+          .m-kind .m-kind-left ul a li span {
+            font-size: 14px; }
+  .m-kind .m-kind-right {
+    width: 5rem;
+    height: 100%;
+    overflow-y: auto; }
+    .m-kind .m-kind-right .k-gardenStuff {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto; }
+      .m-kind .m-kind-right .k-gardenStuff .categroy-child-list {
+        font-size: 16px;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        background-color: #FFF; }
+        .m-kind .m-kind-right .k-gardenStuff .categroy-child-list dt {
+          width: 2.92rem;
+          height: 0.3rem;
+          background-color: #FCFCFC;
+          margin: 0.1rem;
+          border-style: solid;
+          border-color: #F5F5F5;
+          border-width: 0.001rem 0; }
+          .m-kind .m-kind-right .k-gardenStuff .categroy-child-list dt a {
+            background-color: #FCFCFC;
+            margin: 0.1rem 0;
+            border-style: solid;
+            border-color: #F5F5F5;
+            border-width: 0.05rem 0;
+            color: #111;
+            font-size: 13px;
+            font-weight: 300; }
+        .m-kind .m-kind-right .k-gardenStuff .categroy-child-list dd {
+          font-size: 0.12rem;
+          line-height: 0.3rem;
+          vertical-align: top;
+          display: inline-block;
+          width: 40%;
+          height: 0.3rem;
+          padding: 0.01rem;
+          margin-left: 0.1rem;
+          border-radius: 0; }
+          .m-kind .m-kind-right .k-gardenStuff .categroy-child-list dd a {
+            display: block;
+            color: #444;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden; }
+
+@font-face {
+  font-family: 'iconfont';
+  /* project id 263314 */
+  src: url("//at.alicdn.com/t/font_m0r35w830izfr.eot");
+  src: url("//at.alicdn.com/t/font_m0r35w830izfr.eot?#iefix") format("embedded-opentype"), url("//at.alicdn.com/t/font_m0r35w830izfr.woff") format("woff"), url("//at.alicdn.com/t/font_m0r35w830izfr.ttf") format("truetype"), url("//at.alicdn.com/t/font_m0r35w830izfr.svg#iconfont") format("svg"); }
+
+.m-productList {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; }
+
+.m-cart {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; }
+  .m-cart #cart-list-wp {
+    width: 100%;
+    height: 100%; }
+    .m-cart #cart-list-wp .nctouch-cart-container {
+      height: 1.25rem;
+      overflow: hidden;
+      background-color: #FFF;
+      display: block;
+      clear: both;
+      background-color: #FFF;
+      margin-bottom: .5rem;
+      border: solid #d8d8d8;
+      border-width: .01rem; }
+      .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-store {
+        height: .39rem;
+        vertical-align: middle;
+        border-bottom: solid .02rem #eee;
+        display: block; }
+        .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-store dt {
+          height: .38rem;
+          padding: 0.075rem  0.05rem;
+          font-size: 14px;
+          vertical-align: middle;
+          z-index: 1;
+          display: block;
+          font-size: .14rem; }
+          .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-store dt img {
+            width: 0.16rem;
+            height: 0.18rem; }
+          .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-store dt span {
+            width: 0.16rem;
+            height: 0.18rem;
+            font-size: 14px;
+            margin: 0 0.1rem;
+            margin-bottom: 0.2rem; }
+      .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-item {
+        width: 100%;
+        height: 0.84rem; }
+        .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-item li {
+          display: block;
+          position: relative;
+          z-index: 1;
+          margin-left: .1rem;
+          padding: .1rem 0;
+          vertical-align: middle;
+          border-bottom: solid #EEE .01rem; }
+          .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-item li .goods-check {
+            width: 0.15rem;
+            height: 0.15rem;
+            overflow: hidden;
+            margin-top: 0.2rem;
+            display: inline-block; }
+          .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-item li .goods-pic {
+            margin-left: 0.1rem;
+            display: block;
+            width: 0.6rem;
+            height: 0.6rem;
+            padding: .04rem;
+            position: absolute;
+            z-index: 1;
+            top: .1rem;
+            left: 0.1rem;
+            border: solid .01rem #EEE;
+            border-radius: .04rem; }
+            .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-item li .goods-pic a {
+              display: block;
+              width: 100%;
+              height: 100%; }
+              .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-item li .goods-pic a img {
+                width: 0.5rem;
+                height: 0.5rem; }
+          .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-item li .goods-info {
+            display: block;
+            vertical-align: top;
+            height: 0.44rem;
+            margin: -0.4rem 0.04rem 0 0.85rem;
+            position: relative;
+            z-index: 1; }
+            .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-item li .goods-info a {
+              display: block;
+              height: 0.18rem;
+              font-size: .12rem;
+              color: #111;
+              line-height: .13rem;
+              overflow: hidden; }
+            .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-item li .goods-info .goods-type {
+              overflow: hidden;
+              white-space: nowrap;
+              width: 65%;
+              height: .18rem;
+              font-size: .09rem;
+              line-height: .13rem;
+              color: #999;
+              text-overflow: ellipsis; }
+          .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-item li .goods-del {
+            display: block;
+            position: absolute;
+            z-index: 1;
+            top: .06rem;
+            right: .1rem;
+            width: 0.15rem;
+            height: 0.15rem; }
+            .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-item li .goods-del img {
+              width: 0.2rem;
+              height: 0.2rem; }
+          .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-item li .goods-subtotal {
+            display: block;
+            height: 0.2rem;
+            margin: -0.05rem 0.1rem 0 0.9rem;
+            line-height: 0.2rem;
+            font-size: .12rem;
+            position: relative;
+            z-index: 1; }
+            .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-item li .goods-subtotal .goods-price {
+              color: #DB4453;
+              font-size: .11rem;
+              font-weight: 600; }
+            .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-item li .goods-subtotal .value-box {
+              display: inline-block;
+              float: right;
+              font-size: 0;
+              border: solid .01rem #CCC;
+              border-radius: .04rem; }
+              .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-item li .goods-subtotal .value-box > span {
+                display: inline-block;
+                vertical-align: top;
+                line-height: 0; }
+              .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-item li .goods-subtotal .value-box a {
+                display: block;
+                width: 0.2rem;
+                height: 0.2rem;
+                color: #f66; }
+              .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-item li .goods-subtotal .value-box .minus {
+                width: 0.2rem;
+                height: 0.2rem;
+                background-color: #FAFAFA;
+                border-radius: .04rem 0 0 .04rem; }
+              .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-item li .goods-subtotal .value-box .buy-num {
+                width: 0.25rem;
+                height: 0.2rem;
+                padding: 0;
+                font-size: .12rem;
+                font-weight: lighter;
+                line-height: 0.12rem;
+                text-align: center;
+                border: solid #CCC;
+                border-width: 0 .01rem;
+                border-radius: 0; }
+              .m-cart #cart-list-wp .nctouch-cart-container .nctouch-cart-item li .goods-subtotal .value-box .add {
+                width: 0.2rem;
+                height: 0.2rem;
+                background-color: #FAFAFA;
+                border-radius: 0 .2rem .2rem 0; }
+    .m-cart #cart-list-wp .nctouch-cart-bottom {
+      position: fixed;
+      z-index: 1;
+      top: auto;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2rem;
+      background-color: rgba(255, 255, 255, 0.85);
+      border-top: solid .05rem #d8d8d8; }
+
+.checkboxFive {
+  width: 0.15rem;
+  margin: 0.02rem 0.06rem 0.05rem;
+  position: relative;
+  display: inline-block; }
+
+.checkboxFive label {
+  cursor: pointer;
+  position: absolute;
+  width: 0.15rem;
+  height: 0.15rem;
+  top: 0.015rem;
+  left: -0.015rem;
+  border-radius: 50%;
+  background: #eee;
+  border: 1px solid #ddd; }
+
+.checkboxFive label:after {
+  opacity: 0;
+  content: '';
+  position: absolute;
+  width: 0.1rem;
+  height: 0.06rem;
+  top: 0.03rem;
+  left: 0.02rem;
+  border: 0.03rem solid #333;
+  border-top: none;
+  border-right: none;
+  border-radius: 30%;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+
+.checkboxFive label:hover::after {
+  opacity: 0; }
+
+.checkboxFive input[type=checkbox]:checked + label {
+  background: #f66; }
+
+.checkboxFive input[type=checkbox]:checked + label:after {
+  opacity: 1; }

@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 
 import { mapStateToProps,mapDispatchToProps } from "../redux/store"
 
+
 import home from './../../../images/footer/home_w.png'
 import browse from './../../../images/footer/browse_list_w.png'
 import cart from './../../../images/footer/cart_w.png'
@@ -25,6 +26,12 @@ class Index extends React.Component {
       <div className="m-index">
       	<header>
       		<h2>{this.props.value}</h2>
+      		<div className="yo-header yo-header-a">
+	      		<h2 className="title">
+	      			{this.props.value}
+	      		</h2>
+	      		
+      		</div>
       	</header>
       	<section>
       		{this.props.children}
@@ -53,12 +60,19 @@ class Index extends React.Component {
   		title:title
   	})
   }
+  componentDidUpdate() {
+    let title = this.props.routes[1].title
+    this.props.onChange({
+      type: 'SETTITLE',
+      title: title
+    })
+  }
 }
 
-export default connect (
-	mapStateToProps,
-	mapDispatchToProps
+
+//export default Index
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
 )(Index)
-
-
 
