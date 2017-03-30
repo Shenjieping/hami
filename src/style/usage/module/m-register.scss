@@ -1,0 +1,34 @@
+.register{
+    height: 100%;
+    width:100%;
+    header{
+        background:#fabc09;
+        height:.44rem;
+        padding:0px 4%;
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(space-between);
+        .back{
+            height:.16rem;
+            width:.16rem;
+            img{
+                height:100%;
+                width:100%;
+            }
+        }
+        h2{
+            color:#fff;
+            font-weight:normal;
+            font-size:.16rem;
+            font-family: "微软雅黑";
+            height:.44rem;
+            line-height:.44rem;
+        }
+        .log{
+            color:#ed5564;
+            font-size:.13rem;
+        }
+    }
+    
+    
+}

@@ -10,14 +10,20 @@ import sina from './../../../images/user/sina.png'
 import cancel from './../../../images/user/cancel_b.png'
 
 
-class Login extends React.Component{
+class Loginmobal extends React.Component{
 	constructor (props) {
 	    super(props)
 	    this.state = {
 	    	login:[]
 	    }
 	}
-	
+	/*verfier(){
+		var num="";
+		for(var i=0;i<6;i++){
+			num+=Math.floor(Math.random()*10)
+		}
+		return num;
+	}*/
 	componentDidMount(){
 	    fetch('http://www.hamij.com/mobile/index.php?act=goods&op=goods_list&gc_id=9&page=8&curpage=2&gc_id=9')
 	        .then((res) => {
@@ -58,6 +64,23 @@ class Login extends React.Component{
 		$('#password').blur(function(){
 			$("#des2").css({"display":"none"})
 		})
+		//if($('#username').val()!=""){
+			$(".sendnum").click(function(){
+				var num="";
+				for(var i=0;i<6;i++){
+					num+=Math.floor(Math.random()*10)
+				}
+				$(".tit").css({"display":"block"})
+				$(".tit").text(num)
+				$(".tit").delay(10000).animate({"opacity":0},500,function(){
+					$(".tit").css({"display":"none","opacity":1})
+				})
+			})
+				
+		/*}else{
+			alert("请输入手机号")
+		}*/
+		
 	}
 	
 	render(){
@@ -66,29 +89,35 @@ class Login extends React.Component{
 				<header className="loginHead">
 		      		<span className="regret"><img src={back} /></span>
 					<h2 className="title">
-		      			账号登录
+		      			手机号登陆
 		      		</h2>
 		      		<Link to="/register" className="affirm">注册</Link>
 				</header>
 				<ul className="select">
-					<li className="active"><Link to=""><img src={hamiLogin} /><span>黄瓜街账号登录</span></Link></li>
-					<li><Link to="/loginmobal"><img src={mobalLogin} className="lo" /><span>手机号登录</span></Link></li>
+					<li className="active"><Link to=""><img src={mobalLogin} /><span>手机号登陆</span></Link></li>
+					<li><Link to="/login"><img src={hamiLogin} className="lo" /><span>黄瓜街账号登录</span></Link></li>
 				</ul>
 				<div className="natouch">
 					<form action="" method="post" className="forms">
 						<div className="info">
 							<div className="user">
-								<span>账户</span><input id="username"  type="text" name="" placeholder="请输入用户名/已验证手机" /><img id="des1" className="des" src={cancel} />
+								<span>手机号</span>
+								<input id="username"  type="text" name="" placeholder="请输入手机号" />
+								<img id="des1" className="des" src={cancel} />
+								<p className="sendnum">发送验证码</p>
 								
 							</div>
 							<div className="pass">
-								<span>密码</span><input id="password" type="password" name="" placeholder="请输入登录密码" /><img id="des2" className="des" src={cancel} />
+								<span>验证码</span><input id="password" type="password" name="" placeholder="请输入验证码" /><img id="des2" className="des" src={cancel} />
 							</div>
 						</div>
 						<div className="btn">
 							<input type="button" id="button"  name="" value="登录" />
 						</div>
 					</form>
+					<div className="tit">
+						
+					</div>
 				</div>
 				<div className="menery">
 					<span><input type="checkbox" id="check" /><label htmlFor="check">七天自动登录</label></span>
@@ -109,4 +138,4 @@ class Login extends React.Component{
 	}
 }
 
-export default Login
+export default Loginmobal

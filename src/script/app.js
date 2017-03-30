@@ -13,6 +13,8 @@ import User from './component/user'
 import Board from './component/board'
 import List from './component/list'
 import Login from './component/login'
+import Loginmobal from './component/loginmobal'
+import Register from './component/register'
 
 
 
@@ -28,7 +30,9 @@ ReactDOM.render(
 	  		<Route path="user" title="用户中心" component={User}></Route>
 	  	</Route>
 	  		<Route path="/list" title="列表" component={List}></Route>
-	  		<Route path="/login" title="列表" component={Login}></Route>
+	  		<Route path="/login" title="账号登陆" component={Login}></Route>
+	  		<Route path="/loginmobal" title="手机号登陆" component={Loginmobal}></Route>
+	  		<Route path="/register" title="注册" component={Register}></Route>
 	  </Router>
   </Provider>,
   document.getElementById('root')
