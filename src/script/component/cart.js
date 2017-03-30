@@ -1,5 +1,6 @@
 import React from 'react'
 import cartw3 from "./../../../images/cart/mcart1.png"
+import cartdel from "./../../../images/cart/cart-del.png"
 class Cart extends React.Component {
 	render() {
 		return(
@@ -12,15 +13,16 @@ class Cart extends React.Component {
 						  		<input type="checkbox" value="1" id="checkboxFiveInput" name="" />
 							  	<label htmlFor="checkboxFiveInput"></label>
 						  	</div>
-						<i className="icon-store"><img src={cartw3}/></i>
-						互惠超市
-					</dt>
+							<img src={cartw3}/>
+							<span>互惠超市</span>
+						</dt>
 					</dl>
 					<ul className="nctouch-cart-item">
 						<li cart_id="13978" className="cart-litemw-cnt">
-							<div className="goods-check">
-								<input type="checkbox" checked="" name="cart_id" value="13978" />
+							<div className="goods-check ">
+							  	<input type="checkbox"  />
 							</div>
+							
 							<div className="goods-pic">
 								<a href="//www.hamij.com/wap/tmpl/product_detail.html?goods_id=120450">
 									<img src="http://www.hamij.com/data/upload/shop/store/goods/68/68_05133658413357936_240.png" />
@@ -31,21 +33,21 @@ class Cart extends React.Component {
 								<dd className="goods-type">同城配送，当日送达！</dd>
 							</dl>
 							<div className="goods-del" cart_id="13978">
-								<a href="javascript:void(0);"></a>
+								<a href="javascript:void(0);"><img src={cartdel}/></a>
 							</div>
 							<div className="goods-subtotal"> <span className="goods-price">￥<em>35.99</em></span>
 								<span className="goods-sale">
 							</span>
 								<div className="value-box">
 									<span className="minus">
-									<a href="javascript:void(0);">&nbsp;</a>
-								</span>
+										<a href="javascript:void(0);">-</a>
+									</span>
 									<span>
-									<input type="text" pattern="[0-9]*" readonly="" className="buy-num buynum" value="1"/>
-								</span>
+										<input type="text" pattern="[0-9]*" readonly="" className="buy-num buynum" value="1"/>
+									</span>
 									<span className="add">
-									<a href="javascript:void(0);">&nbsp;</a>
-								</span>
+										<a href="javascript:void(0);">+</a>
+									</span>
 								</div>
 							</div>
 						</li>
@@ -82,3 +84,5 @@ class Cart extends React.Component {
 }
 
 export default Cart;
+
+

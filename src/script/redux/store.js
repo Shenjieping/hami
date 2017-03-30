@@ -1,6 +1,6 @@
 import { createStore } from 'redux'
 
-function changer(state = {title:'榜单 « 电影 « 豆瓣'}, action) {
+function changer(state = {title:'首页'}, action) {
   switch (action.type) {
     case 'SETTITLE':
       return { title: action.title }

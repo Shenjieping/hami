@@ -1,7 +1,7 @@
 import React from 'react'
 //import Board from './board'
 import { Link } from 'react-router'
-
+import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from '../redux/store'
 
 import home from './../../../images/footer/home_w.png'
@@ -21,12 +21,10 @@ class Index extends React.Component {
       <div className="m-index">
       	<header>
       		<div className="yo-header yo-header-a">
-      		<h2 className="title">
-      			<img src={soso} />
-      			<span>搜索果蔬、美食、家电、母婴</span>
-      		</h2>
-      		<span className="regret"><img src={logo} /></span>
-      		<span className="affirm"><img src={more} /></span>
+	      		<h2 className="title">
+	      			{this.props.value}
+	      		</h2>
+	      		
       	</div>
       	</header>
       	<section>
@@ -47,6 +45,18 @@ class Index extends React.Component {
   componentDidMount() {
    
   }
+  componentDidUpdate() {
+    let title = this.props.routes[1].title
+    this.props.onChange({
+      type: 'SETTITLE',
+      title: title
+    })
+  }
 }
 
-export default Index
+//export default Index
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Index)
+

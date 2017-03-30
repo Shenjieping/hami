@@ -1,9 +1,6 @@
 html{
     font-size: 100px;
 }
-body{
-    font-size: 12px;
-}
 .m-index{
     height:100%;
     width:100%;
@@ -13,6 +10,7 @@ body{
     header{
         height:.4rem;
         width:100%;
+        overflow: hidden;
         background: #fabc09;
         .yo-header{
             text-align: left;

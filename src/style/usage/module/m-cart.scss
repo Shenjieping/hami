@@ -5,62 +5,212 @@
     #cart-list-wp{
         width: 100%;
         height: 100%;
-        .nctouch-main-layout {
-            display: block;
+        .nctouch-cart-container{
+            height: 1.25rem;
             overflow: hidden;
-            margin-bottom: 0.1rem;
-            .nctouch-cart-container {
-                height: 1.25rem;
+            background-color: #FFF;
+            display: block;
+            clear: both;
+            background-color: #FFF;
+            margin-bottom: .5rem;
+            border: solid #d8d8d8;
+            border-width: .01rem;
+            .nctouch-cart-store{
+                height: .39rem;
+                vertical-align: middle;
+                border-bottom: solid .02rem #eee;
                 display: block;
-                clear: both;
-                background-color: #FFF;
-                margin-bottom: .5rem;
-                border: solid #d8d8d8;
-                border-width: .05rem;
-                overflow: hidden;
-                .nctouch-cart-store {
-                    height: 0.39rem;
-                    border-bottom: solid .05rem #eee;
-                    dt {
-                        display: block;
-                        height: .39rem;
-                        padding: .1rem;
-                        font-size: .12rem;
-                        line-height: .2rem;
+                dt{
+                    height: .38rem; 
+                    padding:0.075rem  0.05rem ;
+                    font-size: 14px;
+                    vertical-align: middle;
+                    z-index: 1;
+                    display: block;
+                    font-size: .14rem;
+                    img{
+                        width: 0.16rem;
+                        height: 0.18rem;
                     }
-                    .icon-store {
-                        display: inline-block;
-                        width: .16rem;
-                        height: .24rem;
-                        margin-right: .1rem;
-                        vertical-align: middle;
-                        img{
-                            width: .08rem;
-                            height: .008rem;
-                            display: inline-block;
+                    span{
+                        width: 0.16rem;
+                        height: 0.18rem;
+                        font-size: 14px;
+                        margin:0 0.1rem;
+                        margin-bottom: 0.2rem;
+                    }
+                    
+                    
+                }
+            }
+            .nctouch-cart-item{
+                width: 100%;
+                height: 0.84rem;
+                li {
+                    display: block;
+                    position: relative;
+                    z-index: 1;
+                    margin-left: .1rem;
+                    padding: .1rem 0;
+                    vertical-align: middle;
+                    border-bottom: solid #EEE .01rem;
+                    .goods-check {
+                       width: 0.15rem;
+                       height: 0.15rem;
+                       overflow: hidden;
+                       margin-top: 0.2rem;
+                       display: inline-block;
+                    }
+                    .goods-pic {
+                        margin-left: 0.1rem;
+                        display: block;
+                        width: 0.6rem;
+                        height: 0.6rem;
+                        padding: .04rem;
+                        position: absolute;
+                        z-index: 1;
+                        top: .1rem;
+                        left: 0.1rem;
+                        border: solid .01rem #EEE;
+                        border-radius: .04rem;
+                        a {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            img{
+                                width: 0.5rem;
+                                height: 0.5rem; 
+                            }
                         }
                     }
+                    .goods-info {
+                        display: block;
+                        vertical-align: top;
+                        height: 0.44rem;
+                        margin: -0.4rem 0.04rem 0 0.85rem;
+                        position: relative;
+                        z-index: 1;
+                         a {
+                            display: block;
+                            height: 0.18rem;
+                            font-size: .12rem;
+                            color: #111;
+                            line-height: .13rem;
+                            overflow: hidden;
+                        }
+                        .goods-type {
+                            overflow: hidden;
+                            white-space: nowrap;
+                            width: 65%;
+                            height: .18rem;
+                            font-size: .09rem;
+                            line-height: .13rem;
+                            color: #999;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                    .goods-del {
+                        display: block;
+                        position: absolute;
+                        z-index: 1;
+                        top: .06rem;
+                        right: .1rem;
+                        width: 0.15rem;
+                        height: 0.15rem;
+                        img{
+                             width: 0.2rem;
+                            height: 0.2rem;
+                        }
+                    }
+                     .goods-subtotal {
+                        display: block;
+                        height: 0.2rem;
+                        margin: -0.05rem 0.1rem 0 0.9rem;
+                        line-height: 0.2rem;
+                        font-size: .12rem;
+                        position: relative;
+                        z-index: 1;
+                        .goods-price {
+                            color: #DB4453;
+                            font-size: .11rem;
+                            font-weight: 600;
+                        }
+                         .value-box {
+                            display: inline-block;
+                            float: right;
+                            font-size: 0;
+                            border: solid .01rem #CCC;
+                            border-radius: .04rem;
+                            >span {
+                                display: inline-block;
+                                vertical-align: top;
+                                line-height: 0;
+                            }
+                            a{
+                                display: block;
+                                width: 0.2rem;
+                                height: 0.2rem;
+                                color: #f66;
+                            }
+                            .minus {
+                                width: 0.2rem;
+                                height: 0.2rem;
+                                background-color: #FAFAFA;
+                                border-radius: .04rem 0 0 .04rem;
+                            }
+                            .buy-num {
+                                width: 0.25rem;
+                                height:0.2rem;
+                                padding: 0;
+                                font-size: .12rem;
+                                font-weight: lighter;
+                                line-height: 0.12rem;
+                                text-align: center;
+                                border: solid #CCC;
+                                border-width: 0 .01rem;
+                                border-radius: 0;
+                            }
+                            .add {
+                                width: 0.2rem;
+                                height: 0.2rem;
+                                background-color: #FAFAFA;
+                                border-radius: 0 .2rem .2rem 0;
+                               
+                            }
+                        }
+                    }
+                   
                 }
             }
         }
+        .nctouch-cart-bottom {
+            position: fixed;
+            z-index: 1;
+            top: auto;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 0.4rem;
+            background-color: rgba(255,255,255,.85);
+            border-top: solid .05rem #d8d8d8;
+        }
+        
     }
-    
-    
 }
 
-.checkboxFive {
+.checkboxFive, {
     width: 0.15rem;    
-    margin: 0.1rem 0.1rem;
+    margin: 0.02rem 0.06rem 0.05rem;
     position: relative;
     display: inline-block;
 }
 .checkboxFive label {
     cursor: pointer;
     position: absolute;
-    width: 0.2rem;
-    height: 0.2rem;
-    top: -0.03rem;
-    left: -0.03rem;
+    width: 0.15rem;
+    height: 0.15rem;
+    top: 0.015rem;
+    left: -0.015rem;
     border-radius:50%;
     background: #eee;
     border:1px solid #ddd;
@@ -71,8 +221,8 @@
     position: absolute;
     width: 0.1rem;
     height: 0.06rem;
-    top: 0.06rem;
-    left: 0.05rem;
+    top: 0.03rem;
+    left: 0.02rem;
     border: 0.03rem solid #333;
     border-top: none;
     border-right: none;
@@ -93,5 +243,4 @@
 }
 .checkboxFive input[type=checkbox]:checked + label:after {
     opacity: 1;
-    
 }
