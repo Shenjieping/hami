@@ -14,8 +14,6 @@ import Cart from './component/cart'
 import User from './component/user'
 import Board from './component/board'
 
-import List from './component/list'
-import Login from './component/login'
 import Loginmobal from './component/loginmobal'
 import Register from './component/register'
 
