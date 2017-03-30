@@ -10,6 +10,8 @@ module.exports = {
     // filename: 'app_[hash].js'
     filename: 'app.js'
   },
+  
+  devtool: 'eval-source-map',
 
   devServer: {
     contentBase: './build',
