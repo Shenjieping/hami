@@ -27,31 +27,36 @@ import Digital from './component/kind/digital'
 
 import ProductList from './component/productList'
 
+
+import ProductDetail from './component/productDetail'
+
 ReactDOM.render(
 	<Provider store={store}>
-	  	<Router history={hashHistory}>
-		  	<Route path="/" component={Index}>
-		  		<IndexRoute component={Board} />
-		  		<Route path="board" title="首页"  component={Board}></Route>
-		  		<Route path="kind" title="分类" component={Kind}>
-					<IndexRoute component={gardenStuff} />
-		  			<Route path="gardenStuff" component={gardenStuff}></Route>
-		  			<Route path="meter" component={Meter}></Route>
-		  			<Route path="drinks" component={Drinks}></Route>
-		  			<Route path="departmentStore" component={departmentStore}></Route>
-		  			<Route path="digital" component={Digital}></Route>
-		  		</Route>
-		  		<Route path="cart" title="购物车" component={Cart}></Route>
-		  		<Route path="user" title="用户中心" component={User}></Route>
-		  		<Route path="productList" title=" " component={ProductList}></Route>
-		  	</Route>
-	  		<Route path="/list" title="列表" component={List}></Route>
-	  		<Route path="/login" title="账号登陆" component={Login}></Route>
-	  		<Route path="/loginmobal" title="手机号登陆" component={Loginmobal}></Route>
-	  		<Route path="/register" title="注册" component={Register}></Route>
-	  	</Router>
- 	</Provider>,
- document.getElementById('root')
+	  <Router history={hashHistory}>
+	  	<Route path="/" component={Index}>
+	  		<IndexRoute component={Board} />
+	  		<Route path="board" title="首页"  component={Board}></Route>
+	  		<Route path="kind" title="分类" component={Kind}>
+				<IndexRoute component={gardenStuff} />
+	  			<Route path="gardenStuff" component={gardenStuff}></Route>
+	  			<Route path="meter" component={Meter}></Route>
+	  			<Route path="drinks" component={Drinks}></Route>
+	  			<Route path="departmentStore" component={departmentStore}></Route>
+	  			<Route path="digital" component={Digital}></Route>
+	  		</Route>
+	  		<Route path="cart" title="购物车" component={Cart}></Route>
+	  		<Route path="user" title="用户中心" component={User}></Route>
+	  		<Route path="productList" title=" " component={ProductList}></Route>
+	  	</Route>
+	  	<Route path="/productList/:type" title="商品列表" component={List}></Route>
+	  	<Route path="/productDetail/:type"  component={ProductDetail}></Route>
+	  	<Route path="/list" title="列表" component={List}></Route>
+  		<Route path="/login" title="账号登陆" component={Login}></Route>
+  		<Route path="/loginmobal" title="手机号登陆" component={Loginmobal}></Route>
+  		<Route path="/register" title="注册" component={Register}></Route>
+	  </Router>
+  </Provider>,
+  document.getElementById('root')
 )
 
 
