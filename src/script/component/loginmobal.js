@@ -14,7 +14,8 @@ class Loginmobal extends React.Component{
 	constructor (props) {
 	    super(props)
 	    this.state = {
-	    	login:[]
+	    	login:[],
+	    	isloding:""
 	    }
 	}
 	/*verfier(){
@@ -25,6 +26,8 @@ class Loginmobal extends React.Component{
 		return num;
 	}*/
 	componentDidMount(){
+		var a=0;
+		var that=this;
 	    fetch('http://www.hamij.com/mobile/index.php?act=goods&op=goods_list&gc_id=9&page=8&curpage=2&gc_id=9')
 	        .then((res) => {
 	        	return res.json()
@@ -38,19 +41,7 @@ class Loginmobal extends React.Component{
 	        })
 	        
 	    
-	    $("#button").click(function(){
-	    	var use=$("#username").val();
-	    	var pas=$("#password").val();
-	    	if(use=="" || pas==""){
-	    		$("#title").html("请完善信息！")
-	    		$("#title").css({"display":"block"})
-				$("#title").animate({"opacity":"1"},500,function(){
-					$("#title").delay(2000).animate({"opacity":"0"},500,function(){
-						$("#title").css({"display":"none"})
-					})
-				})
-	    	}
-	    })
+	    
 	    
 	    $('#username').bind('input propertychange', function() {  
 		   //console.log($("#username").val())
@@ -71,21 +62,66 @@ class Loginmobal extends React.Component{
 			$("#des2").css({"display":"none"})
 		})
 		//if($('#username').val()!=""){
+			
 			$(".sendnum").click(function(){
 				var num="";
-				for(var i=0;i<6;i++){
-					num+=Math.floor(Math.random()*10)
+				var use=$('#username').val()
+				if(use=="" || !(/^1[34578]\d{9}$/.test(use))){
+					$("#title").html("请输入正确的手机号！")
+		    		$("#title").css({"display":"block"})
+					$("#title").animate({"opacity":"1"},500,function(){
+						$("#title").delay(2000).animate({"opacity":"0"},500,function(){
+							$("#title").css({"display":"none"})
+						})
+					})
+				}else{
+					
+					for(var i=0;i<6;i++){
+						num+=Math.floor(Math.random()*10)
+					}
+					a=num;
+					$(".tit").css({"display":"block"})
+					$(".tit").text("验证码："+num)
+					$(".tit").delay(10000).animate({"opacity":0},500,function(){
+						$(".tit").css({"display":"none","opacity":1})
+					})
 				}
-				$(".tit").css({"display":"block"})
-				$(".tit").text(num)
-				$(".tit").delay(10000).animate({"opacity":0},500,function(){
-					$(".tit").css({"display":"none","opacity":1})
-				})
+				
 			})
 				
 		/*}else{
 			alert("请输入手机号")
 		}*/
+		$("#button").click(function(){
+	    	var use=$("#username").val();
+	    	var pas=$("#password").val();
+	    	var tit=$("#title").html();
+	    	
+	    	if(use=="" || pas==""){
+	    		$("#title").html("请完善信息！")
+	    		$("#title").css({"display":"block"})
+				$("#title").animate({"opacity":"1"},500,function(){
+					$("#title").delay(2000).animate({"opacity":"0"},500,function(){
+						$("#title").css({"display":"none"})
+					})
+				})
+	    	}else if(a==0 || a != pas){
+	    		$("#title").html("请输入正确的验证码！")
+	    		$("#title").css({"display":"block"})
+				$("#title").animate({"opacity":"1"},500,function(){
+					$("#title").delay(2000).animate({"opacity":"0"},500,function(){
+						$("#title").css({"display":"none"})
+					})
+				})
+	    	}else{
+	    		localStorage.setItem("username",use)
+	    		that.setState({
+	    			isloding:"/user"
+	    		})
+	    	}
+	    	
+	    	
+	    })
 		
 	}
 	
@@ -118,7 +154,7 @@ class Loginmobal extends React.Component{
 							</div>
 						</div>
 						<div className="btn">
-							<input type="button" id="button"  name="" value="登录" />
+							<Link to={this.state.isloding}><input type="button" id="button"  name="" value="登录" /></Link>
 						</div>
 					</form>
 					<div className="tit">

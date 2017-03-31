@@ -40,6 +40,7 @@ class Board extends React.Component{
 	        	console.log(res);
 				var bannerList=res.datas[0].adv_list.item.map(function(item,index){
 					return <li key={index} className="item"><Link to=""><img className="img" src={item.image}/></Link></li>;
+
 				});
 				var adList=res.datas[1].home1.image;
 				var price=res.datas[2].home1.image;
@@ -88,9 +89,10 @@ class Board extends React.Component{
 			<div className="m-board">
 				<div className="banner">
 					<Carousel>
-					     <li className="item"><img className="img" src="//img1.qunarzz.com/qs/1610/a6/01d1ad00e4b9e102.jpg" /></li>  
 					    <li className="item"><img className="img" src="//img1.qunarzz.com/qs/1610/a6/01d1ad00e4b9e102.jpg" /></li>  
-					    <li className="item"><img className="img" src="//img1.qunarzz.com/qs/1610/a6/01d1ad00e4b9e102.jpg" /></li> 
+					    <li className="item"><img className="img" src="//img1.qunarzz.com/qs/1610/a6/01d1ad00e4b9e102.jpg" /></li>  
+					    <li className="item"><img className="img" src="//img1.qunarzz.com/qs/1610/a6/01d1ad00e4b9e102.jpg" /></li>  
+
 					</Carousel>
 				</div>
 				

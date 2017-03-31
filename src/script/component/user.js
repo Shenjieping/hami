@@ -26,16 +26,41 @@ import sign_in from './../../../images/user/i_8.png';
 import set from './../../../images/user/mc_04.png';
 import loca from './../../../images/user/mc_07.png';
 import help from './../../../images/user/mc_01.png';
+import default_user from './../../../images/user/default_user.png';
 
 
 class User extends React.Component{
+	constructor (props) {
+	    super(props)
+	    this.state = {
+	    	isLoding:"false",
+	    	username:"",
+	    	log:"/login"
+	    }
+	}
+	componentWillMount(){
+		if(localStorage.getItem("username")){
+			this.setState({
+				isLoding:"true",
+				username:localStorage.getItem("username"),
+				log:""
+			})
+		}else{
+			this.setState({
+		    	isLoding:"false",
+		    	username:"",
+		    	log:"/login"
+		    })
+		}
+	}
 	render(){
 		return (
 			<div className="m-user">
 				<div className="head">
-					<Link to="/login" className="login-box ani elastic-in-down">
-						<div className="login"></div>
-						<p>点击登录</p>
+					<Link to={this.state.log} className="login-box ani elastic-in-down">
+						<div className="login"><img style={{display:this.state.isLoding=="true"? "block" : "none"}} src={default_user} /></div>
+						<p style={{display:this.state.isLoding=="false"? "block" : "none"}}>点击登录</p>
+						<p style={{display:this.state.isLoding=="true"? "block" : "none"}}>{this.state.username}</p>
 					</Link>
 				</div>
 				<div className="myfom">

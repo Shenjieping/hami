@@ -14,7 +14,8 @@ class Login extends React.Component{
 	constructor (props) {
 	    super(props)
 	    this.state = {
-	    	login:[]
+	    	login:[],
+	    	user:""
 	    }
 	}
 	
@@ -31,7 +32,7 @@ class Login extends React.Component{
 	        	console.log(e.message) 
 	        })
 	        
-	    
+	    var that=this;
 	    $("#button").click(function(){
 	    	var use=$("#username").val();
 	    	var pas=$("#password").val();
@@ -43,6 +44,11 @@ class Login extends React.Component{
 						$("#title").css({"display":"none"})
 					})
 				})
+	    	}else{
+	    		localStorage.setItem("username",use)
+	    		that.setState({
+	    			user:"/user"
+	    		})
 	    	}
 	    })
 	    
@@ -65,7 +71,21 @@ class Login extends React.Component{
 			$("#des2").css({"display":"none"})
 		})
 	}
-	
+	/*login(){
+		var use=this.refs.use.value;
+		var pass=this.refs.pass.value;
+		if(use == "" || pass == ""){
+			$("#title").html("请完善信息！")
+    		$("#title").css({"display":"block"})
+			$("#title").animate({"opacity":"1"},500,function(){
+				$("#title").delay(2000).animate({"opacity":"0"},500,function(){
+					$("#title").css({"display":"none"})
+				})
+			})
+		}else{
+			localStorage.setItem("use",use)
+		}
+	}*/
 	render(){
 		return (
 			<div className="m-login">
@@ -84,15 +104,15 @@ class Login extends React.Component{
 					<form action="" method="post" className="forms">
 						<div className="info">
 							<div className="user">
-								<span>账户</span><input id="username"  type="text" name="" placeholder="请输入用户名/已验证手机" /><img id="des1" className="des" src={cancel} />
+								<span>账户</span><input id="username" ref="use"  type="text" name="" placeholder="请输入用户名/已验证手机" /><img id="des1" className="des" src={cancel} />
 								
 							</div>
 							<div className="pass">
-								<span>密码</span><input id="password" type="password" name="" placeholder="请输入登录密码" /><img id="des2" className="des" src={cancel} />
+								<span>密码</span><input id="password" ref="pass" type="password" name="" placeholder="请输入登录密码" /><img id="des2" className="des" src={cancel} />
 							</div>
 						</div>
 						<div className="btn">
-							<input type="button" id="button"  name="" value="登录" />
+							<Link to={this.state.user}><input type="button" id="button"  name="" value="登录" /></Link>
 						</div>
 					</form>
 					<div id="title">
