@@ -13,7 +13,6 @@ class Meter extends React.Component{
 		return (
 			<div className="k-gardenStuff">
 				<dl className="categroy-child-list">
-					<Link to="/productList/goods_id?goods_id=120450">11111111111111111111111111</Link>
 					{this.state.list}
 					
 				</dl>

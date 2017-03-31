@@ -1,17 +1,22 @@
 require('../style/app.scss')
-
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Router, Route, hashHistory, IndexRoute} from 'react-router'
 import { Provider } from 'react-redux'
 import { store } from './redux/store'
 
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Router, Route, hashHistory, IndexRoute  } from 'react-router'
+import Login from './component/login'
 
 import Index from './component/index'
 import Kind from './component/kind'
 import Cart from './component/cart'
 import User from './component/user'
 import Board from './component/board'
+
+import Loginmobal from './component/loginmobal'
+import Register from './component/register'
+
 
 import gardenStuff from './component/kind/gardenStuff'
 import Meter from './component/kind/meter'
@@ -20,6 +25,8 @@ import departmentStore from './component/kind/departmentStore'
 import Digital from './component/kind/digital'
 
 import List from './component/productList'
+
+
 import ProductDetail from './component/productDetail'
 
 ReactDOM.render(
@@ -41,7 +48,14 @@ ReactDOM.render(
 	  	</Route>
 	  	<Route path="/productList/:type" title="商品列表" component={List}></Route>
 	  	<Route path="/productDetail/:type"  component={ProductDetail}></Route>
+  		<Route path="/login" title="账号登陆" component={Login}></Route>
+  		<Route path="/loginmobal" title="手机号登陆" component={Loginmobal}></Route>
+  		<Route path="/register" title="注册" component={Register}></Route>
 	  </Router>
   </Provider>,
   document.getElementById('root')
 )
+
+
+
+

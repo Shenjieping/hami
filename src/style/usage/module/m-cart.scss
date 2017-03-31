@@ -36,7 +36,7 @@
                         width: 0.16rem;
                         height: 0.18rem;
                         font-size: 14px;
-                        margin:0 0.1rem;
+                        margin:0 0.05rem;
                         margin-bottom: 0.2rem;
                     }
                     
@@ -56,7 +56,7 @@
                     border-bottom: solid #EEE .01rem;
                     .goods-check {
                        width: 0.15rem;
-                       height: 0.15rem;
+                       height: 0.2rem;
                        overflow: hidden;
                        margin-top: 0.2rem;
                        display: inline-block;
@@ -184,63 +184,102 @@
             }
         }
         .nctouch-cart-bottom {
+            width: 100%;
             position: fixed;
             z-index: 1;
             top: auto;
             left: 0;
-            right: 0;
-            bottom: 0;
+            bottom: 0.5rem;
             height: 0.4rem;
             background-color: rgba(255,255,255,.85);
-            border-top: solid .05rem #d8d8d8;
+            border-top: solid .01rem #d8d8d8;
+            border-bottom: solid .01rem #d8d8d8;
+             @include flexbox();
+            @include flex-direction(row);
+            @include align-items(center);
+            .all-check {
+                position: absolute;
+                z-index: 1;
+                top: .08rem;
+                left: .1rem;
+            }
+            .total {
+                display: block;
+                float: left;
+                text-align: right;
+                width: 75%;
+                .total-money {
+                    background: #fff;
+                    height: 0.4rem;
+                    margin-right: 0.3rem;
+                    font-size: 0;
+                    line-height: 0.4rem;
+                    dt {
+                        display: inline-block;
+                        font-size: .12rem;
+                    }
+                }
+                dd {
+                    display: inline-block;
+                    font-size: .11rem;
+                    color: #DB4453;
+                    font-weight: 600;
+                    em {
+                        font-size: .18rem;
+                    }
+                }
+            }
+            .check-out {
+                display: block;
+                float: right;
+                width: 25%;
+                height: 0.4rem;
+                background-color: #ED5564;
+                 a {
+                display: block;
+                text-align: center;
+                font-size: .16rem;
+                color: #FFF;
+                line-height: 0.4rem;
+                }
+            }
         }
         
     }
 }
 
-.checkboxFive, {
-    width: 0.15rem;    
-    margin: 0.02rem 0.06rem 0.05rem;
-    position: relative;
-    display: inline-block;
+input{
+    margin-right:0.05rem;
+    -webkit-appearance: none;
+   position: relative;
+    width: .15rem;
+    height: .15rem;
+    background-color: #F5F5F5;
+    border: .01rem solid #CCC;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    vertical-align: middle;
 }
-.checkboxFive label {
-    cursor: pointer;
-    position: absolute;
-    width: 0.15rem;
-    height: 0.15rem;
-    top: 0.015rem;
-    left: -0.015rem;
-    border-radius:50%;
-    background: #eee;
-    border:1px solid #ddd;
-}
-.checkboxFive label:after {
-    opacity: 0;
+input[type=checkbox]:checked:after {
     content: '';
     position: absolute;
-    width: 0.1rem;
-    height: 0.06rem;
-    top: 0.03rem;
-    left: 0.02rem;
-    border: 0.03rem solid #333;
-    border-top: none;
-    border-right: none;
-    border-radius:30%;
+    left: .01rem;
+    top: .012rem;
+    width: .13rem;
+    height: .07rem;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
     -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
-.checkboxFive label:hover::after {
-    opacity: 0; 
-    
+input[type=checkbox]:checked {
+    border-color: #48CFAE;
+    background-color: #f66;
 }
-.checkboxFive input[type=checkbox]:checked + label {
-    
-    background: #f66;
+label{
+    color:#000;
+    font-size:.12rem;
 }
-.checkboxFive input[type=checkbox]:checked + label:after {
-    opacity: 1;
-}
+
+

@@ -9,10 +9,7 @@ class Cart extends React.Component {
 				<div className="nctouch-cart-container">
 					<dl className="nctouch-cart-store">
 						<dt>
-							<div className="checkboxFive">
-						  		<input type="checkbox" value="1" id="checkboxFiveInput" name="" />
-							  	<label htmlFor="checkboxFiveInput"></label>
-						  	</div>
+						  	<span><input type="checkbox" id="check" /></span>
 							<img src={cartw3}/>
 							<span>互惠超市</span>
 						</dt>
@@ -20,7 +17,7 @@ class Cart extends React.Component {
 					<ul className="nctouch-cart-item">
 						<li cart_id="13978" className="cart-litemw-cnt">
 							<div className="goods-check ">
-							  	<input type="checkbox"  />
+							  	<span><input type="checkbox" id="check" /></span>
 							</div>
 							
 							<div className="goods-pic">
@@ -54,7 +51,9 @@ class Cart extends React.Component {
 					</ul>
 				</div>
 				<div className="nctouch-cart-bottom">
-					<div className="all-check"><input className="all_checkbox" type="checkbox" checked="" /></div>
+					<div className="all-check">
+						<span><input type="checkbox" id="check" /><label htmlFor="check"></label></span>
+					</div>
 					<div className="total">
 						<dl className="total-money"><dt>合计总金额：</dt>
 							<dd>￥<em>35.99</em></dd>
@@ -81,8 +80,11 @@ class Cart extends React.Component {
 			
 		)
 	}
+	componentDidMount() {
+		
+		
+	}
 }
 
 export default Cart;
-
 

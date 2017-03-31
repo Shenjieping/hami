@@ -10,6 +10,8 @@ module.exports = {
     // filename: 'app_[hash].js'
     filename: 'app.js'
   },
+  
+  devtool: 'eval-source-map',
 
   devServer: {
     contentBase: './build',
@@ -91,5 +93,5 @@ module.exports = {
     'react-touter':'window.ReactRouter',
     'redux': 'window.Redux',
     'react-redux': 'window.ReactRedux'
-  }
+  }	
 }

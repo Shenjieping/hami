@@ -1,4 +1,5 @@
 @import "./../fragment/yo-header";
+@import "./../fragment/yo-carousel";
 @import "./../fragment/yo-list";
 @import "./../fragment/yo-modal";
 
@@ -6,4 +7,11 @@
     width:100%;
     height:100%;
 }
+
+@include yo-header (
+    $name:a,
+    $bgcolor:#fabc09,
+    $border-width:0
+);
+
 

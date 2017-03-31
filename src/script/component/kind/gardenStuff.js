@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
+import Scroller from '../../../component_dev/scroller/src'
 class gardenStuff extends React.Component {
 	constructor (props) {
 	    super(props)
@@ -10,12 +11,19 @@ class gardenStuff extends React.Component {
 	}
 	render(){
 		return (
+				
 			<div className="k-gardenStuff">
+			
 				<dl className="categroy-child-list">
-					{this.state.list}
+					<Scroller>
+						{this.state.list}
+					</Scroller>	
 				</dl>
+			
 				{this.props.children}
+				
 			</div>
+				
 		)
 	}
 componentDidMount(){
