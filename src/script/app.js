@@ -6,7 +6,6 @@ import { store } from './redux/store'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, hashHistory, IndexRoute  } from 'react-router'
-import List from './component/list'
 import Login from './component/login'
 
 import Index from './component/index'
@@ -25,7 +24,7 @@ import Drinks from './component/kind/drinks'
 import departmentStore from './component/kind/departmentStore'
 import Digital from './component/kind/digital'
 
-import ProductList from './component/productList'
+import List from './component/productList'
 
 
 import ProductDetail from './component/productDetail'
@@ -46,11 +45,9 @@ ReactDOM.render(
 	  		</Route>
 	  		<Route path="cart" title="购物车" component={Cart}></Route>
 	  		<Route path="user" title="用户中心" component={User}></Route>
-	  		<Route path="productList" title=" " component={ProductList}></Route>
 	  	</Route>
 	  	<Route path="/productList/:type" title="商品列表" component={List}></Route>
 	  	<Route path="/productDetail/:type"  component={ProductDetail}></Route>
-	  	<Route path="/list" title="列表" component={List}></Route>
   		<Route path="/login" title="账号登陆" component={Login}></Route>
   		<Route path="/loginmobal" title="手机号登陆" component={Loginmobal}></Route>
   		<Route path="/register" title="注册" component={Register}></Route>
