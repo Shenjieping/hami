@@ -18,7 +18,14 @@ class Login extends React.Component{
 	    	user:""
 	    }
 	}
-	
+	titleFn(){
+		$("#title").css({"display":"block"})
+		$("#title").animate({"opacity":"1"},500,function(){
+			$("#title").delay(2000).animate({"opacity":"0"},500,function(){
+				$("#title").css({"display":"none"})
+			})
+		})
+	}
 	componentDidMount(){
 	    fetch('http://www.hamij.com/mobile/index.php?act=goods&op=goods_list&gc_id=9&page=8&curpage=2&gc_id=9')
 	        .then((res) => {
@@ -38,17 +45,39 @@ class Login extends React.Component{
 	    	var pas=$("#password").val();
 	    	if(use=="" || pas==""){
 	    		$("#title").html("请完善信息！")
-	    		$("#title").css({"display":"block"})
-				$("#title").animate({"opacity":"1"},500,function(){
-					$("#title").delay(2000).animate({"opacity":"0"},500,function(){
-						$("#title").css({"display":"none"})
-					})
-				})
+	    		that.titleFn()
 	    	}else{
-	    		localStorage.setItem("username",use)
+	    		/*localStorage.setItem("username",use)
 	    		that.setState({
 	    			user:"/user"
-	    		})
+	    		})*/
+	    		$.ajax({
+					type:"get",
+					url:"http://datainfo.duapp.com/shopdata/userinfo.php",
+					data:{
+						status:"login",
+						userID:use,
+						password:pas
+					},
+					success:function(data){
+						if(data==0){
+							$("#title").html("用户名不存在！")
+	    					that.titleFn()
+						}else if(data==2){
+							$("#title").html("用户名或密码错误！")
+	    					that.titleFn()
+						}else{
+							/*if(localStorage.getItem("username")){
+								
+							}*/
+							localStorage.setItem("username",JSON.parse(data).userID)
+				    		that.setState({
+				    			user:"/user"
+				    		})
+						}
+						
+					}
+				});
 	    	}
 	    })
 	    
@@ -86,11 +115,14 @@ class Login extends React.Component{
 			localStorage.setItem("use",use)
 		}
 	}*/
+	Back(){
+		window.history.go(-1)
+	}
 	render(){
 		return (
 			<div className="m-login">
 				<header className="loginHead">
-		      		<span className="regret"><img src={back} /></span>
+		      		<span className="regret" onClick={this.Back}><img src={back} /></span>
 					<h2 className="title">
 		      			账号登录
 		      		</h2>

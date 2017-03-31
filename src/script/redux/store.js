@@ -1,5 +1,6 @@
 import { createStore } from 'redux'
 
+
 function changer(state = {title:'首页'}, action) {
   switch (action.type) {
     case 'SETTITLE':
@@ -7,6 +8,7 @@ function changer(state = {title:'首页'}, action) {
     default:
       return state
   }
+
 }
 
 // 将 Redux state 转化成 组件的 props

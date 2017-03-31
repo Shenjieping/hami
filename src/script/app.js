@@ -34,8 +34,8 @@ ReactDOM.render(
 	  <Router history={hashHistory}>
 	  	<Route path="/" component={Index}>
 	  		<IndexRoute component={Board} />
-	  		<Route path="board" title="首页"  component={Board}></Route>
-	  		<Route path="kind" title="分类" component={Kind}>
+	  		<Route path="board" title="1"  component={Board}></Route>
+	  		<Route path="kind" title="2" component={Kind}>
 				<IndexRoute component={gardenStuff} />
 	  			<Route path="gardenStuff" component={gardenStuff}></Route>
 	  			<Route path="meter" component={Meter}></Route>
@@ -43,8 +43,8 @@ ReactDOM.render(
 	  			<Route path="departmentStore" component={departmentStore}></Route>
 	  			<Route path="digital" component={Digital}></Route>
 	  		</Route>
-	  		<Route path="cart" title="购物车" component={Cart}></Route>
-	  		<Route path="user" title="用户中心" component={User}></Route>
+	  		<Route path="cart" title="3" component={Cart}></Route>
+	  		<Route path="user" title="4" component={User}></Route>
 	  	</Route>
 	  	<Route path="/productList/:type" title="商品列表" component={List}></Route>
 	  	<Route path="/productDetail/:type"  component={ProductDetail}></Route>
