@@ -24,10 +24,10 @@ ReactDOM.render(
 	  <Router history={hashHistory}>
 	  	<Route path="/" component={Index}>
 	  		<IndexRoute component={Board} />
-	  		<Route path="board" title="首页" component={Board}></Route>
-	  		<Route path="kind" title="分类" component={Kind}></Route>
-	  		<Route path="cart" title="购物车" component={Cart}></Route>
-	  		<Route path="user" title="用户中心" component={User}></Route>
+	  		<Route path="board" title="1" component={Board}></Route>
+	  		<Route path="kind" title="2" component={Kind}></Route>
+	  		<Route path="cart" title="3" component={Cart}></Route>
+	  		<Route path="user" title="4" component={User}></Route>
 	  	</Route>
 	  		<Route path="/list" title="列表" component={List}></Route>
 	  		<Route path="/login" title="账号登陆" component={Login}></Route>

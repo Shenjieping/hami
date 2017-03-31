@@ -18,13 +18,15 @@ class Loginmobal extends React.Component{
 	    	isloding:""
 	    }
 	}
-	/*verfier(){
-		var num="";
-		for(var i=0;i<6;i++){
-			num+=Math.floor(Math.random()*10)
-		}
-		return num;
-	}*/
+	titleFn(){
+		$("#title").css({"display":"block"})
+		$("#title").animate({"opacity":"1"},500,function(){
+			$("#title").delay(2000).animate({"opacity":"0"},500,function(){
+				$("#title").css({"display":"none"})
+			})
+		})
+	}
+	
 	componentDidMount(){
 		var a=0;
 		var that=this;
@@ -39,10 +41,6 @@ class Loginmobal extends React.Component{
 	        .catch((e) => { 
 	        	console.log(e.message) 
 	        })
-	        
-	    
-	    
-	    
 	    $('#username').bind('input propertychange', function() {  
 		   //console.log($("#username").val())
 		   $("#des1").css({"display":"block"})
@@ -68,12 +66,7 @@ class Loginmobal extends React.Component{
 				var use=$('#username').val()
 				if(use=="" || !(/^1[34578]\d{9}$/.test(use))){
 					$("#title").html("请输入正确的手机号！")
-		    		$("#title").css({"display":"block"})
-					$("#title").animate({"opacity":"1"},500,function(){
-						$("#title").delay(2000).animate({"opacity":"0"},500,function(){
-							$("#title").css({"display":"none"})
-						})
-					})
+		    		that.titleFn();
 				}else{
 					
 					for(var i=0;i<6;i++){
@@ -86,7 +79,6 @@ class Loginmobal extends React.Component{
 						$(".tit").css({"display":"none","opacity":1})
 					})
 				}
-				
 			})
 				
 		/*}else{
@@ -99,20 +91,10 @@ class Loginmobal extends React.Component{
 	    	
 	    	if(use=="" || pas==""){
 	    		$("#title").html("请完善信息！")
-	    		$("#title").css({"display":"block"})
-				$("#title").animate({"opacity":"1"},500,function(){
-					$("#title").delay(2000).animate({"opacity":"0"},500,function(){
-						$("#title").css({"display":"none"})
-					})
-				})
+	    		that.titleFn();
 	    	}else if(a==0 || a != pas){
 	    		$("#title").html("请输入正确的验证码！")
-	    		$("#title").css({"display":"block"})
-				$("#title").animate({"opacity":"1"},500,function(){
-					$("#title").delay(2000).animate({"opacity":"0"},500,function(){
-						$("#title").css({"display":"none"})
-					})
-				})
+	    		that.titleFn();
 	    	}else{
 	    		localStorage.setItem("username",use)
 	    		that.setState({

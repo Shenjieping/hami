@@ -1,4 +1,5 @@
 .m-board{
+    
     width:100%;
     height:auto;
     .banner{
@@ -263,9 +264,11 @@
         background: #fff;
         .yo-scroller{
                 height:100%;
+                width:100%;
             ul{
                 height:100%;
-                width:10rem;
+                width:auto;
+                white-space: nowrap;
                 li{
                     display:inline-block;
                     height:100%;
@@ -417,7 +420,7 @@
             display:block;
             img{
                 height:100%;
-                height:100%;
+                width:100%;
             }
         }
         
@@ -433,7 +436,6 @@
         }
     }
     .like-list{
-        height:17.55rem;
         width:100%;
         background:#fff;
         ul{
