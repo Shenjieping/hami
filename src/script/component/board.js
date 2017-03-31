@@ -11,7 +11,7 @@ class Board extends React.Component{
 	constructor (props) {
 	    super(props)
 	    this.state = {
-	    	bannerList:[],
+	    	bannerList:[<div />],
 	    	adList:[],
 	    	price:[],
 	    	priceList:[],
@@ -26,11 +26,6 @@ class Board extends React.Component{
 	    }
 	}
 	componentDidMount(){
-		//let url='http://www.hamij.com/mobile/index.php?act=index'
-		//fetchData(url)
-		
-		
-		
 		
 	    fetch('http://www.hamij.com/mobile/index.php?act=index')
 	        .then((res) => {
@@ -86,12 +81,10 @@ class Board extends React.Component{
 //{this.state.bannerList}
 	render(){
 		return (
-			<div className="m-board">
+			<div className="m-board">				
 				<div className="banner">
 					<Carousel>
-					    <li className="item"><img className="img" src="//img1.qunarzz.com/qs/1610/a6/01d1ad00e4b9e102.jpg" /></li>  
-					    <li className="item"><img className="img" src="//img1.qunarzz.com/qs/1610/a6/01d1ad00e4b9e102.jpg" /></li>  
-					    <li className="item"><img className="img" src="//img1.qunarzz.com/qs/1610/a6/01d1ad00e4b9e102.jpg" /></li>  
+					    {this.state.bannerList}  
 
 					</Carousel>
 				</div>
@@ -153,6 +146,7 @@ class Board extends React.Component{
 						{this.state.likeList}
 					</ul>
 				</div>
+			
 			</div>
 		)
 	}

@@ -28,7 +28,6 @@ class Kind extends React.Component{
 						{this.props.children}
 					</Scroller >
 				</div>
-				
 			</div>
 		)
 	}

@@ -10,8 +10,7 @@ html{
     header{
         height:.44rem;
         width:100%;
-        overflow: hidden;
-        background: #fabc09;
+
         .yo-header{
             text-align: left;
             position:relative;
@@ -64,9 +63,81 @@ html{
                 display:none;
             }
         }
+        .carthead{
+            height:100%;
+            padding:0px .1rem;
+            @include flexbox();
+            @include justify-content(space-between);
+            @include align-items(center);
+            background:#f8f8f8;
+            .kindre{
+                height:.16rem;
+                width:.16rem;
+                img{
+                    height:100%;
+                    width:100%;
+                    
+                }
+            }
+            .title{
+                font-weight: normal;
+                font-size:.16rem;
+                font-family: "微软雅黑";
+            }
+            .affirm{
+                height:.19rem;
+                width:.19rem;
+                img{
+                    height:100%;
+                    width:100%;
+                }
+            }
+        }
         .kindhead{
-            overflow: visible;
-            padding-top: 1px;
+            height:100%;
+            padding:0px .1rem;
+            @include flexbox();
+            @include justify-content(space-between);
+            @include align-items(center);
+            background:#fabc09;
+            .kindre{
+                height:.16rem;
+                width:.16rem;
+                img{
+                    height:100%;
+                    width:100%;
+                    
+                }
+            }
+            .title{
+                height:.28rem;
+                @include flex();
+                background:#fef1ce;
+                border-radius: .1rem;
+                margin:0px .15rem;
+                @include flexbox();
+                @include justify-content(space-between);
+                @include align-items(center);
+                img{
+                    height:.16rem;
+                    width:.16rem;
+                    margin:0px .05rem;
+                }
+                span{
+                    @include flex();
+                    display:inline-block;
+                    height:100%;
+                }
+            }
+            .affirm{
+                height:.19rem;
+                width:.19rem;
+                img{
+                    height:100%;
+                    width:100%;
+                }
+            }
+
         }
     }
     section{
