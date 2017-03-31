@@ -67,6 +67,12 @@ class Loginmobal extends React.Component{
 				if(use=="" || !(/^1[34578]\d{9}$/.test(use))){
 					$("#title").html("请输入正确的手机号！")
 		    		that.titleFn();
+		    		$("#title").css({"display":"block"})
+					$("#title").animate({"opacity":"1"},500,function(){
+						$("#title").delay(2000).animate({"opacity":"0"},500,function(){
+							$("#title").css({"display":"none"})
+						})
+					})
 				}else{
 					
 					for(var i=0;i<6;i++){

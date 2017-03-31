@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from '../redux/store'
 import Modal from '../../component_dev/modal/src'
+import Scroller from '../../component_dev/scroller/src'
 import { Link } from 'react-router'
 
 import browse_list from "./../../../images/ProductList/browse_list.png"
@@ -19,7 +20,9 @@ class List extends React.Component {
 		this.state = {
 			title: 'abc',
 			list:"",
-			shows:false
+			shows:false,
+			addcart:[]
+			
 		}
 		this.xianshi=this.xianshi.bind(this)
 		this.yincang=this.yincang.bind(this)
@@ -30,7 +33,9 @@ class List extends React.Component {
         <header>
         	<div className="header-wrap">
 	        	<div className="header-l">
-		        	<img className="regret" src={list_arrow_left}/>
+	        		<Link to="/" >
+	        			<img className="regret" src={list_arrow_left}/>
+	        		</Link>
 		        </div>
 	        	<div className="header-inp">
 		        	<img className="regret" src={search_ico}/>
@@ -45,56 +50,9 @@ class List extends React.Component {
         	</div>
         </header>
         <section>
+       	 
         <Modal show={this.state.shows}>
-		    <div className="nctouch-bottom-mask-block" >
-				<div className="nctouch-bottom-mask-top goods-options-info">
-					<img  onClick={this.yincang} src={list_close} className="nctouch-bottom-mask-close"/>
-					<div className="goods-pic"> <img src="http://www.hamij.com/data/upload/shop/store/goods/114/114_05414390348437765_240.jpg" id="goods-pic"/> </div>
-					<dl> <dt id="goods_name_val">精品菠菜 1kg</dt>
-						<dd className="goods-price">￥<em>11.80</em> <span className="goods-storage" id="goods-storage">库存：50件</span> </dd>
-					</dl>
-					
-				</div>
-				<div className="nctouch-bottom-mask-rolling" id="product_roll">
-					<div className="goods-options-stock">
-						<dl className="spec" id="spec_list"><dt spec_id="6">规格</dt>
-							<dd>
-								<a href="javascript:void(0);" className="current" data-id="120088" specs_value_id="1472">1kg</a>
-								<a href="javascript:void(0);" data-id="120089" specs_value_id="1473">500g</a>
-								<a href="javascript:void(0);" data-id="120090" specs_value_id="2123">300g</a>
-							</dd>
-						</dl>
-					</div>
-				</div>
-				<div className="goods-option-value">购买数量
-					<div className="value-box"> 
-						<span className="minus">
-						<a href="javascript:void(0);">-</a>		
-						</span> 
-							<span>			
-								<input type="text" pattern="[0-9]*" className="buy-num" id="buynum-120088" value="1"/>		
-							</span> 
-							<span className="add">
-								<a href="javascript:void(0);">+</a>		
-							</span> 
-					</div>
-				</div>
-				<div className="goods-option-foot">
-					<div className="otreh-handle">
-						<a href="javascript:void(0);" className="kefu"> 
-							<img src={list_kefu}/>
-							<p>客服</p>
-						</a>
-						<a href="../tmpl/cart_list.html" className="cart1"> 
-							<img src={list_cart}/>
-							<p>购物车</p> <span id="cart_count1"><sup>1</sup></span> </a>
-					</div>
-					<div className="buy-handle ">
-						<a href="javascript:void(0);" className="add-cart2" id="cart-120088">加入购物车</a>
-						<a href="javascript:void(0);" className="buy-now" id="buy-now">立即购买</a>
-					</div>
-				</div>
-			</div>
+		   {this.state.addcart}
 		</Modal>
 	        <div className="goods-search-list-nav">
 						<ul id="nav_ul">
@@ -114,30 +72,111 @@ class List extends React.Component {
 							</a>
 						</div>
 					</div>
-					
-					
+				<Scroller usePullRefresh={true} ref="scroller" useLoadMore={true}  onRefresh={() => {
+			        this.refs.scroller.stopRefreshing(true);
+			    }} onLoad={() => {
+        this.refs.scroller.stopLoading(true); 
+    }}>
 					<div className="nctouch-main-layout mt40 mb20">
 						<div id="product_list" className="list">
 							<ul className="goods-secrch-list">
 								{this.state.list}
-								<li className="loading">
-									<div className="spinner"><i></i></div>商品数据读取中...
-								</li>
 							</ul>
 						</div>
 					</div>         
+         		</Scroller>
+        
          
-         
-         {this.props.children}
         </section>
       </div>
+      
 		)
 	}
-	xianshi(){
-		this.setState({
-			shows:true
-		})
+	
+	xianshi(msg, e){
+		fetch('http://www.hamij.com/mobile/index.php?act=goods&op=goods_detail&goods_id='+msg+'&key=d0f54b6c56cc6668f9e6b7a947953bdd')
+			.then((res) => {
+				return res.json()
+			})
+			.then((res) => {
+				console.log(res)
+				console.log(res.datas)
+				console.log(res.datas.goods_info.goods_name)
+				var that=this;
+					var listchild=function(){
+						return (
+							<div className="nctouch-bottom-mask-block" >
+								<div className="nctouch-bottom-mask-top goods-options-info">
+									<img  src={list_close} onClick={that.yincang} className="nctouch-bottom-mask-close"/>
+									<div className="goods-pic"> <img src={res.datas.spec_image[0]}  id="goods-pic"/> </div>
+									<dl> <dt id="goods_name_val">{res.datas.goods_info.goods_name}</dt>
+										<dd className="goods-price">￥<em>{res.datas.goods_info.goods_price}</em> <span className="goods-storage" id="goods-storage">库存：{res.datas.goods_info.goods_storage}件</span> </dd>
+									</dl>
+								</div>
+								<div className="nctouch-bottom-mask-rolling" id="product_roll">
+									<div className="goods-options-stock">
+										<dl className="spec" id="spec_list"><dt spec_id="6">规格</dt>
+											<dd>
+												<a href="javascript:void(0);" className="current" data-id="120088" specs_value_id="1472">1kg</a>
+												<a href="javascript:void(0);" data-id="120089" specs_value_id="1473">500g</a>
+												<a href="javascript:void(0);" data-id="120090" specs_value_id="2123">300g</a>
+											</dd>
+										</dl>
+									</div>
+								</div>
+								<div className="goods-option-value">购买数量
+									<div className="value-box"> 
+										<span className="minus">
+										<a href="javascript:void(0);">-</a>		
+										</span> 
+											<span>			
+												<input type="text" pattern="[0-9]*" className="buy-num" id="buynum-120088" value="1"/>		
+											</span> 
+											<span className="add">
+												<a href="javascript:void(0);">+</a>		
+											</span> 
+									</div>
+								</div>
+								<div className="goods-option-foot">
+									<div className="otreh-handle">
+										<a href="javascript:void(0);" className="kefu"> 
+											<img src={list_kefu}/>
+											<p>客服</p>
+										</a>
+										<a href="../tmpl/cart_list.html" className="cart1"> 
+											<img src={list_cart}/>
+											<p>购物车</p> <span id="cart_count1"><sup>1</sup></span> </a>
+									</div>
+									<div className="buy-handle ">
+										<a href="javascript:void(0);" className="add-cart2" id="cart-120088">加入购物车</a>
+										<Link to="/cart" className="buy-now" id="buy-now">立即购买</Link>
+									</div>
+								</div>
+							</div>
+				        );
+					}
+					
+				this.setState({
+					addcart: listchild()
+				})
+				console.log(listchild())
+			})
+			.catch((e) => {
+				console.log(e.message)
+			})	
+		
+			console.log(msg)
+			this.setState({
+				shows:true
+			})
+			e=e||window.event;
+			if(e.stopPropagation){
+				e.stopPropagation();
+			}else{
+				e.cancelBubble=true;
+			}
 	}
+
 	yincang(){
 		this.setState({
 			shows:false
@@ -168,28 +207,28 @@ class List extends React.Component {
 				console.log(res.datas.goods_list)
 				var listdata=res.datas.goods_list.map(function(item,index){
 					return (
-						<Link to={'/productDetail/' + "goods_id?goods_id=" + item.goods_id } className="goods-item" goods_id="120778"> 
-						<span className="goods-pic">					
+						<li className="goods-item" goods_id="120778"> 
+						<Link to={'/productDetail/' + "goods_id?goods_id=" + item.goods_id } className="goods-pic">					
 							<a href="#" className="list_page" target="_blank">						
 								<img src={item.goods_image_url} className="lazyload"/>					
 							</a>																			
-						</span>
+						</Link>
 						<dl className="goods-info"> 
-							<dt className="goods-name">						
+							<Link to={'/productDetail/' + "goods_id?goods_id=" + item.goods_id } className="goods-name">						
 								<a href="#" className="list_page">														
 									<h4>{item.goods_name}</h4>																				
 								</a>					
-							</dt>
+							</Link>
 							<dd className="goods-sale">
-								<a href="#" className="list_page"> 
+								<Link to={'/productDetail/' + "goods_id?goods_id=" + item.goods_id } className="list_page"> 
 									<span className="goods-price">￥<em>{item.goods_price}</em></span> 
-								</a>
-								<img className="cart2"  onClick={that.xianshi} src={listcat1}/>
+								</Link>
+								<img className="cart2"  onClick={that.xianshi.bind(that, item.goods_id)} src={listcat1}/>
 							</dd>
 							<dd className="goods-assist">
-								<a href="#"> 
+								<Link to={'/productDetail/' + "goods_id?goods_id=" + item.goods_id }> 
 									<span className="goods-sold">销量	<em>{item.goods_salenum}</em></span> 
-								</a>
+								</Link>
 								<div className="goods-store">
 									<a href="#" data-id="114">{item.store_name}
 										<img src={list_more} />
@@ -199,7 +238,7 @@ class List extends React.Component {
 							</dd> 
 							
 						</dl>
-					</Link>
+					</li>
 			        );
 				})
 				this.setState({
@@ -215,6 +254,12 @@ class List extends React.Component {
 			type: 'SETTITLE',
 			title: title
 		})
+		
+		
+		
+		
+		
+		
 	}
 }
 

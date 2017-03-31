@@ -38,19 +38,17 @@ class Index extends React.Component {
     return (
       <div className="m-index">
       	<header>
-
+      		{this.state.hd}
       	</header>
       	<section>
       		{this.props.children}
       	</section>
       	<footer>
       		<ul>
-
-						<Link onClick={this.headelr} to="/board"><li><img id="a1" src={home} alt="" /><span>首页</span></li></Link>
-						<Link onClick={this.headelr} to="/kind"><li><img id="a2" src={browse} alt="" /><span>分类</span></li></Link>
-						<Link onClick={this.headelr} to="/cart"><li><img id="a3" src={cart} alt="" /><span>购物车</span></li></Link>
-						<Link onClick={this.headelr} to="/user"><li><img id="a4" src={member} alt="" /><span>用户中心</span></li></Link>
-
+						<Link to="/board"><li><img src={home} alt="" /><span>首页</span></li></Link>
+						<Link to="/kind"><li><img src={browse} alt="" /><span>分类</span></li></Link>
+						<Link to="/cart"><li><img src={cart} alt="" /><span>购物车</span></li></Link>
+						<Link to="/user"><li><img src={member} alt="" /><span>用户中心</span></li></Link>
 					</ul>
       	</footer>
       </div>
@@ -129,12 +127,10 @@ class Index extends React.Component {
   
   componentDidUpdate(){
   	let title=this.props.routes[1].title
-  	
   	this.props.onChange({
   		type:"SETTITLE",
   		title:title
   	})
-    	//console.log("up",this.props.value)
   }
   componentDidUpdate() {
     let title = this.props.routes[1].title

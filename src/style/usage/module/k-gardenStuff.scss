@@ -1,9 +1,11 @@
 .m-kind{
+    
     width: 100%;
     height: 100%;
     display: block;
     overflow: hidden;
     @include flexbox();
+    @include flex-direction(row);
     @include align-items(center);
     @include justify-content(left);
     .m-kind-left{
@@ -40,7 +42,12 @@
     .m-kind-right{
         width:5rem;
         height: 100%;
+        flex: 1;
         overflow-y: auto;
+        .yo-scroller{
+            width: 100%;
+            height:100%;
+        }
         .k-gardenStuff {
             width: 100%;
             height: 100%;
@@ -93,11 +100,3 @@
         
     }  
 }  
-@font-face {
-  font-family: 'iconfont';  /* project id 263314 */
-  src: url('//at.alicdn.com/t/font_m0r35w830izfr.eot');
-  src: url('//at.alicdn.com/t/font_m0r35w830izfr.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_m0r35w830izfr.woff') format('woff'),
-  url('//at.alicdn.com/t/font_m0r35w830izfr.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_m0r35w830izfr.svg#iconfont') format('svg');
-}

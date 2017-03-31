@@ -2,6 +2,9 @@
     width:100%;
     height: 100%;
     overflow: hidden;
+    .yo-scroller{
+        height: 100%;
+    }
     header{
         width: 100%;
         height: 0.37rem;
@@ -62,9 +65,11 @@
     }
     
     section{
+        
         width: 100%;
         height: 100%;
         overflow-y: auto;
+        
         .goods-search-list-nav {
             display: block;
             width: 100%;

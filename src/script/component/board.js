@@ -6,7 +6,6 @@ import Carousel from './../../component_dev/carousel/src'
 import Scroller from './../../component_dev/scroller/src'
 //import fetchData from '../util/util.fetch.js'
 import { Link } from 'react-router'
-
 //
 class Board extends React.Component{
 	constructor (props) {
@@ -82,11 +81,9 @@ class Board extends React.Component{
 //{this.state.bannerList}
 	render(){
 		return (
-			<div className="m-board">
-				
+			<div className="m-board">				
 				<div className="banner">
 					<Carousel>
-
 					    {this.state.bannerList}  
 
 					</Carousel>
