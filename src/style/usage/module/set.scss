@@ -1,0 +1,92 @@
+.set{
+    height:100%;
+    width:100%;
+    background:#f0f0f0;
+    header{
+        height:.44rem;
+        padding:0px .15rem;
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(space-between);
+        background: #fabc09;
+        span{
+            display:inline-block;
+            height:.18rem;
+            width:.18rem;
+            img{
+                height:100%;
+                width:100%;
+            }
+        }
+        h2{
+            font-size:.16rem;
+            font-weight: normal;
+            font-family: "微软雅黑";
+            color:#fff;
+        }
+    }
+    .list{
+        height:auto;
+        width:100%;
+        a{
+            height:.6rem;
+            padding:0px .1rem;
+            background:#fff;
+            border-bottom:1px solid #eee;
+            @include flexbox();
+            @include align-items(center);
+            @include justify-content(space-between);
+            p{
+                @include flex();
+                height:.4rem;
+                font-family: "微软雅黑";
+                span{
+                    display:block;
+                    font-size:.12rem;
+                    height:.2rem;
+                    line-height:.2rem;
+                    &.head{
+                        color:#333;
+                        font-size:.13rem;
+                    }
+                    &.con{
+                        color:#888;
+                    }
+                }
+            }
+            .right{
+                height:.14rem;
+                width:.14rem;
+                img{
+                    height:100%;
+                    width:100%;
+                }
+            }
+            &.pay,.signal{
+              border:none;  
+            }
+            &.signal{
+                margin-top:.15rem;
+            }
+        }
+    }
+    .btn{
+        height:.36rem;
+        width:100%;
+        margin-top:.2rem;
+        a{
+            display:block;
+            height:100%;
+            width:94%;
+            margin:0px 3%;
+            background:#ED5564;
+            color:#fff;
+            font-size:.16rem;
+            font-family: "微软雅黑";
+            text-align: center;
+            line-height:.36rem;
+            border-radius: 5px;
+            letter-spacing: 3px;
+        }
+    }
+}

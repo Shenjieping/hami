@@ -16,6 +16,8 @@ import Board from './component/board'
 
 import Loginmobal from './component/loginmobal'
 import Register from './component/register'
+import Set from './component/set'
+import Search from './component/search'
 
 
 import gardenStuff from './component/kind/gardenStuff'
@@ -48,9 +50,11 @@ ReactDOM.render(
 	  	</Route>
 	  	<Route path="/productList/:type" title="商品列表" component={List}></Route>
 	  	<Route path="/productDetail/:type"  component={ProductDetail}></Route>
-  		<Route path="/login" title="账号登陆" component={Login}></Route>
-  		<Route path="/loginmobal" title="手机号登陆" component={Loginmobal}></Route>
-  		<Route path="/register" title="注册" component={Register}></Route>
+	  		<Route path="/login" title="账号登陆" component={Login}></Route>
+	  		<Route path="/loginmobal" title="手机号登陆" component={Loginmobal}></Route>
+	  		<Route path="/register" title="注册" component={Register}></Route>
+	  		<Route path="/set" title="设置" component={Set}></Route>
+	  		<Route path="/search" title="搜索" component={Search}></Route>
 	  </Router>
   </Provider>,
   document.getElementById('root')
