@@ -28,6 +28,9 @@ import loca from './../../../images/user/mc_07.png';
 import help from './../../../images/user/mc_01.png';
 import default_user from './../../../images/user/default_user.png';
 
+import sethead from './../../../images/user/set_w.png'
+import morehead from './../../../images/user/more_w.png'
+
 
 class User extends React.Component{
 	constructor (props) {
@@ -35,7 +38,8 @@ class User extends React.Component{
 	    this.state = {
 	    	isLoding:"false",
 	    	username:"",
-	    	log:"/login"
+	    	log:"/login",
+	    	sets:""
 	    }
 	}
 	componentWillMount(){
@@ -43,13 +47,15 @@ class User extends React.Component{
 			this.setState({
 				isLoding:"true",
 				username:localStorage.getItem("username"),
-				log:""
+				log:"",
+				sets:"/set"
 			})
 		}else{
 			this.setState({
 		    	isLoding:"false",
 		    	username:"",
-		    	log:"/login"
+		    	log:"/login",
+		    	sets:"/login"
 		    })
 		}
 	}
@@ -62,6 +68,10 @@ class User extends React.Component{
 						<p style={{display:this.state.isLoding=="false"? "block" : "none"}}>点击登录</p>
 						<p style={{display:this.state.isLoding=="true"? "block" : "none"}}>{this.state.username}</p>
 					</Link>
+					<div className="userHead">
+			      		<Link to={this.state.sets} className="kindre"><img src={sethead} /></Link>
+			      		<Link to="" className="affirm"><img src={morehead} /></Link>
+					</div>
 				</div>
 				<div className="myfom">
 					<div className="order">

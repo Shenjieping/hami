@@ -15,6 +15,8 @@ import List from './component/list'
 import Login from './component/login'
 import Loginmobal from './component/loginmobal'
 import Register from './component/register'
+import Set from './component/set'
+import Search from './component/search'
 
 
 
@@ -33,6 +35,8 @@ ReactDOM.render(
 	  		<Route path="/login" title="账号登陆" component={Login}></Route>
 	  		<Route path="/loginmobal" title="手机号登陆" component={Loginmobal}></Route>
 	  		<Route path="/register" title="注册" component={Register}></Route>
+	  		<Route path="/set" title="设置" component={Set}></Route>
+	  		<Route path="/search" title="搜索" component={Search}></Route>
 	  </Router>
   </Provider>,
   document.getElementById('root')
