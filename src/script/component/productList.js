@@ -25,8 +25,7 @@ class List extends React.Component {
 			shows: false,
 			addcart: [],
 			goods_id: [],
-			inputvalue: 1,
-			aa:0
+			inputvalue: 1
 		}
 		this.xianshi = this.xianshi.bind(this)
 		this.yincang = this.yincang.bind(this)
@@ -130,9 +129,9 @@ class List extends React.Component {
 							<div className="yo-list yo-list-group">
 								<div className="item">
 									<div className="yo-number">
-										<button onClick={that.minus.bind(that)} className="minus disabled">-</button>
+										<span onClick={that.minus.bind(that)} className="minus disabled">-</span>
 										<input ref="inputvalue" type="text" className="input" value={that.state.inputvalue}/>
-										<button onClick={that.plus.bind(that)} className="plus">+</span>
+										<span onClick={that.plus.bind(that)} className="plus">+</span>
 									</div>
 								</div>
 							</div>
@@ -220,10 +219,11 @@ class List extends React.Component {
 		this.setState({
 			inputvalue:--this.state.inputvalue
 		})
+		
 	}
 	
-	
 	componentDidMount() {
+		
 		var that = this
 		var url = window.location.href;
 		function getUrlSearch(url, name) {
