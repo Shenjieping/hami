@@ -2,6 +2,7 @@
 @import "./../fragment/yo-carousel";
 @import "./../fragment/yo-list";
 @import "./../fragment/yo-modal";
+@import "./../fragment/yo-number.scss";
 
 #root{
     width:100%;
@@ -13,5 +14,7 @@
     $bgcolor:#fabc09,
     $border-width:0
 );
-
-
+@include yo-number{
+    $width: 0.68rem;
+    $height: 0.26rem;
+}
