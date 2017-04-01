@@ -80,6 +80,7 @@ class Cart extends React.Component {
 			
 		)
 	}
+	
 	componentDidMount() {
 		
 		

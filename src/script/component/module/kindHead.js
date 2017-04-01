@@ -30,7 +30,6 @@ class kindHead extends React.Component{
 	Back(){
 		window.history.go(-1)
 	}
-	
 	render(){
 		return (
 			<div className="kindhead">

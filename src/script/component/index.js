@@ -97,7 +97,7 @@ class Index extends React.Component {
         name: <div>{res.name}</div>
       })
     })*/
-       console.log("didmount",this.props.value)
+       //console.log("didmount",this.props.value)
    switch (this.props.value){
    	case "1":
    	//console.log(11)
