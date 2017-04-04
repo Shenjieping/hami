@@ -27,17 +27,7 @@ class Login extends React.Component{
 		})
 	}
 	componentDidMount(){
-	    fetch('http://www.hamij.com/mobile/index.php?act=goods&op=goods_list&gc_id=9&page=8&curpage=2&gc_id=9')
-	        .then((res) => {
-	        	return res.json()
-	        })
-	        .then((res) => {
-	        	console.log(res);
-				
-	        })
-	        .catch((e) => { 
-	        	console.log(e.message) 
-	        })
+	    
 	        
 	    var that=this;
 	    $("#button").click(function(){

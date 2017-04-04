@@ -27,6 +27,7 @@ import departmentStore from './component/kind/departmentStore'
 import Digital from './component/kind/digital'
 
 import List from './component/productList'
+import Details from './component/details'
 
 
 import ProductDetail from './component/productDetail'
@@ -55,6 +56,7 @@ ReactDOM.render(
 	  		<Route path="/register" title="注册" component={Register}></Route>
 	  		<Route path="/set" title="设置" component={Set}></Route>
 	  		<Route path="/search" title="搜索" component={Search}></Route>
+	  		<Route path="/details" title="详情" component={Details}></Route>
 	  </Router>
   </Provider>,
   document.getElementById('root')

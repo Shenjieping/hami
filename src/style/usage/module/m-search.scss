@@ -56,4 +56,18 @@
         margin-top:.2rem;
         padding-left:.1rem;
     }
+    .hotShop{
+        height:auto;
+        padding:0px .2rem;
+        span{
+            display:inline-block;
+            line-height:.25rem;
+            font-size:.14rem;
+            padding:0px .06rem;
+            background:#fff;
+            border-radius: .18rem;
+            margin:.09rem .05rem;
+            color:#666;
+        }
+    }
 }
