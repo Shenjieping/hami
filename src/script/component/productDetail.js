@@ -99,6 +99,7 @@ class productDetail extends React.Component {
 			return "";
 		}
       // getUrlSearch(window.location.href,"goods_id")
+      console.log(window.location.href)
 		var a= getUrlSearch(window.location.href,"goods_id")
 		//console.log(a)
 		fetch("http://www.hamij.com/mobile/index.php?act=goods&op=goods_detail&goods_id="+a+"&key=")
@@ -123,20 +124,6 @@ class productDetail extends React.Component {
 			}).catch(function(er){
 				console.log(er)
 			})
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		/*fetch('http://www.hamij.com/mobile/index.php?act=goods&op=goods_list&gc_id='+a+'&page=8&curpage=1&gc_id='+a)
 		
