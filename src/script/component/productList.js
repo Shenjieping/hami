@@ -106,7 +106,6 @@ class List extends React.Component {
 				return res.json()
 			})
 			.then((res) => {
-				console.log(res)
 				var _id = res.datas.goods_info.goods_id
 				var that = this;
 				newarr .push( 
@@ -168,7 +167,6 @@ class List extends React.Component {
 			.catch((e) => {
 				console.log(e.message)
 			})
-			console.log(msg)
 		this.setState({
 			shows: true
 		})
@@ -198,7 +196,6 @@ class List extends React.Component {
 				},
 				
 				success:function(data){
-					console.log(data)
 					if(data==1){
 						console.log("成功")
 						localStorage.setItem("goodsID",goods_id)
@@ -241,14 +238,12 @@ class List extends React.Component {
 		}
 		getUrlSearch(window.location.href, "goods_id")
 		var a = getUrlSearch(window.location.href, "goods_id")
-		console.log(a)
 		fetch('http://www.hamij.com/mobile/index.php?act=goods&op=goods_list&gc_id=' + a + '&page=8&curpage=1&gc_id=' + a)
 
 			.then((res) => {
 				return res.json()
 			})
 			.then((res) => {
-				console.log(res.datas.goods_list)
 				var listdata = res.datas.goods_list.map(function(item, index) {
 					return(
 						<li className="goods-item" goods_id="120778"> 

@@ -99,16 +99,13 @@ class productDetail extends React.Component {
 			return "";
 		}
       // getUrlSearch(window.location.href,"goods_id")
-      console.log(window.location.href)
 		var a= getUrlSearch(window.location.href,"goods_id")
 		//console.log(a)
 		fetch("http://www.hamij.com/mobile/index.php?act=goods&op=goods_detail&goods_id="+a+"&key=")
 			.then(function(response){
 				return response.json()
 			}).then(function(json){
-				console.log(json)
 				var list=json;
-				
 				that.setState({
 					product:list.datas.goods_image,
 					goods_name:list.datas.goods_info.goods_name,

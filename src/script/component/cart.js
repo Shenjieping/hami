@@ -32,15 +32,12 @@ class Cart extends React.Component {
 		if(localStorage.getItem("username")){
 			let username=localStorage.getItem("username")
 			let goodsID=localStorage.getItem("goodsID")
-			console.log(username)
-			console.log(goodsID)
 			fetch('http://www.hamij.com/mobile/index.php?act=goods&op=goods_detail&goods_id='+ goodsID+'&key=d0f54b6c56cc6668f9e6b7a947953bdd')
 			
 				.then((res) => {
 					return res.json()
 				})
 				.then((res) => {
-					console.log(res)
 						listcart.push(
 						<div className="m-cart">
 							<div id="cart-list-wp">

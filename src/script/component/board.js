@@ -32,8 +32,6 @@ class Board extends React.Component{
 	        	return res.json()
 	        })
 	        .then((res) => {
-	        	console.log(res);
-	        
 				var bannerList=res.datas[0].adv_list.item.map(function(item,index){
 						
 					return <li key={index} className="item"><Link to="/"><img className="img" src={item.image}/></Link></li>;
