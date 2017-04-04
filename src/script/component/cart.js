@@ -112,7 +112,7 @@ class Cart extends React.Component {
 				.catch((e) => {
 					console.log(e.message)
 				})
-			let title = '列表页'
+			
 			
 		}else{
 			window.location.href="#/login"
