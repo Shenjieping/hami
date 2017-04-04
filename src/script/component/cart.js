@@ -112,10 +112,7 @@ class Cart extends React.Component {
 				.catch((e) => {
 					console.log(e.message)
 				})
-			let title = '列表页'
-			this.props.onChange({
-				type: 'SETTITLE',
-				title: title
+		
 			})
 		}else{
 			window.location.href="#/login"
