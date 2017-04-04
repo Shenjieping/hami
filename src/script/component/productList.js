@@ -32,14 +32,14 @@ class List extends React.Component {
 	
 	}
 	render() {
+		
+		
 		return(
 			<div className="m-productList">
         <header>
         	<div className="header-wrap">
 	        	<div className="header-l">
-	        		<Link to="/" >
-	        			<img className="regret" src={list_arrow_left}/>
-	        		</Link>
+	        		<img onClick={this.fanhui.bind(this)} className="regret" src={list_arrow_left}/>
 		        </div>
 	        	<div className="header-inp">
 		        	<img className="regret" src={search_ico}/>
@@ -94,7 +94,11 @@ class List extends React.Component {
 
 		)
 	}
-
+	
+	fanhui(){
+		window.history.go(-1);
+	}
+	
 	xianshi(msg, e) {
 		let newarr = [];
 		fetch('http://www.hamij.com/mobile/index.php?act=goods&op=goods_detail&goods_id=' + msg + '&key=d0f54b6c56cc6668f9e6b7a947953bdd')
@@ -102,7 +106,8 @@ class List extends React.Component {
 				return res.json()
 			})
 			.then((res) => {
-				var id = res.datas.goods_info.goods_id
+				console.log(res)
+				var _id = res.datas.goods_info.goods_id
 				var that = this;
 				newarr .push( 
 				<div className="nctouch-bottom-mask-block" >
@@ -130,7 +135,7 @@ class List extends React.Component {
 								<div className="item">
 									<div className="yo-number">
 										<span onClick={that.minus.bind(that)} className="minus disabled">-</span>
-										<input ref="inputvalue" type="text" className="input" value={that.state.inputvalue}/>
+										<input ref="inputvalue" type="text" id="input" className="input" value={that.state.inputvalue}/>
 										<span onClick={that.plus.bind(that)} className="plus">+</span>
 									</div>
 								</div>
@@ -145,10 +150,11 @@ class List extends React.Component {
 							</a>
 							<a href="javascript:void(0);" className="cart1"> 
 								<img src={list_cart}/>
-								<p>购物车</p> <span id="cart_count1"><sup>1</sup></span> </a>
+								<p>购物车</p>
+							</a>
 						</div>
 						<div className="buy-handle ">
-							<a onClick={that.minus.bind(that)} href="javascript:void(0);" className="add-cart2" id="cart-120088">加入购物车</a>
+							<a onClick={that.addcarts.bind(that,_id)} href="javascript:void(0);" className="add-cart2" id="cart-120088">加入购物车</a>
 							<Link to="/cart" className="buy-now" id="buy-now">立即购买</Link>
 						</div>
 					</div>
@@ -156,7 +162,7 @@ class List extends React.Component {
 
 				this.setState({
 					addcart: newarr,
-					goods_id: id
+					goods_id: _id
 				})
 			})
 			.catch((e) => {
@@ -166,12 +172,6 @@ class List extends React.Component {
 		this.setState({
 			shows: true
 		})
-		/*e = e || window.event;
-		if(e.stopPropagation) {
-			e.stopPropagation();
-		} else {
-			e.cancelBubble = true;
-		}*/
 		
 	}
 
@@ -186,35 +186,39 @@ class List extends React.Component {
 		alert(4)
 		
 	}	
-	addcarts(){
+	addcarts(goods_id){
+		if(localStorage.getItem("username")){
+			$.ajax({
+				type:"get",
+				url:"http://datainfo.duapp.com/shopdata/updatecar.php",
+				data:{
+					userID:"f66",
+					goodsID:goods_id,
+					number:1
+				},
+				
+				success:function(data){
+					console.log(data)
+					if(data==1){
+						console.log("成功")
+						localStorage.setItem("goodsID",goods_id)
+						localStorage.setItem("number",1)
+					}else if(data == 0){
+						console.log("shibai")
+					}else{
+						console.log("baocuo")
+					}
+					
+				}
+			});   
+		}else{
+			window.location.href="#/login"
+		}
 		
-	 	alert(2)
-	}
-	aaa(){
-		alert(3)
 	}
 	minus() {
 		//console.log(11)
-//		 $.ajax({
-//			type:"get",
-//			url:"http://datainfo.duapp.com/shopdata/updatecar.php",
-//			data:{
-//				userID:"f66",
-//				goodsID:2,
-//				number:1
-//			},
-//			success:function(data){
-//				console.log(data)
-//				if(data==1){
-//					console.log("成功")
-//				}else if(data == 0){
-//					console.log("shibai")
-//				}else{
-//					console.log("baocuo")
-//				}
-//				
-//			}
-//		});   
+//		
 		alert(1)
 		this.setState({
 			inputvalue:--this.state.inputvalue
