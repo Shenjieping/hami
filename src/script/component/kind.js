@@ -24,7 +24,7 @@ class Kind extends React.Component{
 				</div>
 				
 				<div className="m-kind-right">
-					<Scroller >
+					<Scroller   bounce={false}>
 						{this.props.children}
 					</Scroller >
 				</div>

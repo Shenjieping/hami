@@ -31,6 +31,7 @@ import default_user from './../../../images/user/default_user.png';
 import sethead from './../../../images/user/set_w.png'
 import morehead from './../../../images/user/more_w.png'
 
+import Scroller from './../../component_dev/scroller/src'
 
 class User extends React.Component{
 	constructor (props) {
@@ -62,91 +63,93 @@ class User extends React.Component{
 	render(){
 		return (
 			<div className="m-user">
-				<div className="head">
-					<Link to={this.state.log} className="login-box ani elastic-in-down">
-						<div className="login"><img style={{display:this.state.isLoding=="true"? "block" : "none"}} src={default_user} /></div>
-						<p style={{display:this.state.isLoding=="false"? "block" : "none"}}>点击登录</p>
-						<p style={{display:this.state.isLoding=="true"? "block" : "none"}}>{this.state.username}</p>
-					</Link>
-					<div className="userHead">
-			      		<Link to={this.state.sets} className="kindre"><img src={sethead} /></Link>
-			      		<Link to="" className="affirm"><img src={morehead} /></Link>
+				<Scroller scrollY={true} bounce={false}>
+					<div className="head">
+						<Link to={this.state.log} className="login-box ani elastic-in-down">
+							<div className="login"><img style={{display:this.state.isLoding=="true"? "block" : "none"}} src={default_user} /></div>
+							<p style={{display:this.state.isLoding=="false"? "block" : "none"}}>点击登录</p>
+							<p style={{display:this.state.isLoding=="true"? "block" : "none"}}>{this.state.username}</p>
+						</Link>
+						<div className="userHead">
+				      		<Link to={this.state.sets} className="kindre"><img src={sethead} /></Link>
+				      		<Link to="" className="affirm"><img src={morehead} /></Link>
+						</div>
 					</div>
-				</div>
-				<div className="myfom">
-					<div className="order">
-						<a href="#" className="myOrder"><img src={myOrder} /> 我的订单</a>
-						<a href="#" className="allOrder">查看全部订单 <img src={allOrder} /></a>
+					<div className="myfom">
+						<div className="order">
+							<a href="#" className="myOrder"><img src={myOrder} /> 我的订单</a>
+							<a href="#" className="allOrder">查看全部订单 <img src={allOrder} /></a>
+						</div>
+						<ul className="wait">
+							<li><a href="#"><img src={payment} /><span>待付款</span></a></li>
+							<li><a href="#"><img src={takegoods} /><span>待收货</span></a></li>
+							<li><a href="#"><img src={complate} /><span>已完成</span></a></li>
+							<li><a href="#"><img src={refund} /><span>退款/退货</span></a></li>
+						</ul>
 					</div>
-					<ul className="wait">
-						<li><a href="#"><img src={payment} /><span>待付款</span></a></li>
-						<li><a href="#"><img src={takegoods} /><span>待收货</span></a></li>
-						<li><a href="#"><img src={complate} /><span>已完成</span></a></li>
-						<li><a href="#"><img src={refund} /><span>退款/退货</span></a></li>
-					</ul>
-				</div>
-				<div className="integral">
-					<a href="#" className="integral-left">
-						<img src={inte_center} />
-						<p>积分中心</p>
-					</a>
-					<div className="integral-middle">
-						<a href="#" className="shop-inte">
-							<p className="look">去看看</p>
-							<p>店铺积分</p>
+					<div className="integral">
+						<a href="#" className="integral-left">
+							<img src={inte_center} />
+							<p>积分中心</p>
 						</a>
-						<a href="#" className="n-inte">
-							<p className="look">N</p>
-							<p>我的积分</p>
-						</a>
+						<div className="integral-middle">
+							<a href="#" className="shop-inte">
+								<p className="look">去看看</p>
+								<p>店铺积分</p>
+							</a>
+							<a href="#" className="n-inte">
+								<p className="look">N</p>
+								<p>我的积分</p>
+							</a>
+						</div>
+						<div className="integral-right">
+							<a href="#" className="logo-inte">
+								<p className="look">去看看</p>
+								<p>积分日志</p>
+							</a>
+							<a href="#" className="store-inte">
+								<p className="look">去兑换</p>
+								<p>积分商城</p>
+							</a>
+						</div>
 					</div>
-					<div className="integral-right">
-						<a href="#" className="logo-inte">
-							<p className="look">去看看</p>
-							<p>积分日志</p>
-						</a>
-						<a href="#" className="store-inte">
-							<p className="look">去兑换</p>
-							<p>积分商城</p>
-						</a>
+					
+					<div className="menu">
+						<a href="#" className=""><img src={shop_collect} /><span>商品收藏</span></a>
+						<a href="#" className=""><img src={store_collect} /><span>店铺收藏</span></a>
+						<a href="#" className=""><img src={heel} /><span>足迹</span></a>
+						<a href="#" className="back_info"><img src={back_info} /><span>投诉反馈</span></a>
+						<a href="#" className=""><img src={my_asset} /><span>我的财产</span></a>
+						<a href="#" className=""><img src={consigeen} /><span>收货地址</span></a>
+						<a href="#" className=""><img src={invite} /><span>邀请码图片</span></a>
+						<a href="#" className="my_invite"><img src={my_invite} /><span>我的邀请</span></a>
+						<a href="#" className="my_monry"><img src={my_monry} /><span>我的存款</span></a>
+						<a href="#" className="voucher"><img src={voucher} /><span>代金券</span></a>
+						<a href="#" className="packed"><img src={packed} /><span>红包</span></a>
+						<a href="#" className="sign_in"><img src={sign_in} /><span>积分签到</span></a>
 					</div>
-				</div>
-				
-				<div className="menu">
-					<a href="#" className=""><img src={shop_collect} /><span>商品收藏</span></a>
-					<a href="#" className=""><img src={store_collect} /><span>店铺收藏</span></a>
-					<a href="#" className=""><img src={heel} /><span>足迹</span></a>
-					<a href="#" className="back_info"><img src={back_info} /><span>投诉反馈</span></a>
-					<a href="#" className=""><img src={my_asset} /><span>我的财产</span></a>
-					<a href="#" className=""><img src={consigeen} /><span>收货地址</span></a>
-					<a href="#" className=""><img src={invite} /><span>邀请码图片</span></a>
-					<a href="#" className="my_invite"><img src={my_invite} /><span>我的邀请</span></a>
-					<a href="#" className="my_monry"><img src={my_monry} /><span>我的存款</span></a>
-					<a href="#" className="voucher"><img src={voucher} /><span>代金券</span></a>
-					<a href="#" className="packed"><img src={packed} /><span>红包</span></a>
-					<a href="#" className="sign_in"><img src={sign_in} /><span>积分签到</span></a>
-				</div>
-				<div className="set">
-					<div>
-						<img src={set} />
-						<span>我的设置</span>
+					<div className="set">
+						<div>
+							<img src={set} />
+							<span>我的设置</span>
+						</div>
+						<img src={allOrder} />
 					</div>
-					<img src={allOrder} />
-				</div>
-				<div className="loca">
-					<div>
-						<img src={loca} />
-						<span>我的定位</span>
+					<div className="loca">
+						<div>
+							<img src={loca} />
+							<span>我的定位</span>
+						</div>
+						<img src={allOrder} />
 					</div>
-					<img src={allOrder} />
-				</div>
-				<div className="help">
-					<div>
-						<img src={help} />
-						<span>帮助中心</span>
+					<div className="help">
+						<div>
+							<img src={help} />
+							<span>帮助中心</span>
+						</div>
+						<img src={allOrder} />
 					</div>
-					<img src={allOrder} />
-				</div>
+				</Scroller>
 			</div>
 		)
 	}

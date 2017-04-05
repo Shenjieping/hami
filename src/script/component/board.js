@@ -82,72 +82,73 @@ class Board extends React.Component{
 //{this.state.bannerList}
 	render(){
 		return (
-			<div className="m-board">				
-				<div className="banner">
-					<Carousel>
-					    {this.state.bannerList}  
-
-					</Carousel>
-				</div>
-				
-				<div className="list">
-					<NavList />
-				</div>
-				<div className="today">
-					<TodayList />
-				</div>
-				<div className="ad">
-					<Link to="/"><img src={this.state.adList} /></Link>
-				</div>
-				<div className="price">
-					<img src={this.state.price} />
-				</div>
-				<div className="price-list">
-					<ul goodsid="1">
-						{this.state.priceList}
-					</ul>
-				</div>
-				<div className="recommend">
-					<img src={this.state.recommend} />
-				</div>
-				<div className="recommend-list">
-					<Scroller scrollX ={true}>
-						<ul>
-							{this.state.recommendList}
+			<div className="m-board">
+				<Scroller scrollY={true}  bounce={false}>
+					<div className="banner">
+						<Carousel>
+						    {this.state.bannerList}  
+	
+						</Carousel>
+					</div>
+					
+					<div className="list">
+						<NavList />
+					</div>
+					<div className="today">
+						<TodayList />
+					</div>
+					<div className="ad">
+						<Link to="/"><img src={this.state.adList} /></Link>
+					</div>
+					<div className="price">
+						<img src={this.state.price} />
+					</div>
+					<div className="price-list">
+						<ul goodsid="1">
+							{this.state.priceList}
 						</ul>
-					</Scroller>
-				</div>
-				<div className="life">
-					<img src={this.state.life} />
-				</div>
-				<div className="life-list">
-					<ul>
-						{this.state.lifeList}
-					</ul>
-				</div>
-				<div className="hothove">
-					<span>热荐商家</span>
-					<span className="produs">康缘蜂产品店</span>
-				</div>
-				<div className="hothove-list">
-					<Scroller scrollX ={true}>
+					</div>
+					<div className="recommend">
+						<img src={this.state.recommend} />
+					</div>
+					<div className="recommend-list">
+						<Scroller scrollX ={true}   bounce={false}>
+							<ul>
+								{this.state.recommendList}
+							</ul>
+						</Scroller>
+					</div>
+					<div className="life">
+						<img src={this.state.life} />
+					</div>
+					<div className="life-list">
 						<ul>
-							{this.state.hothove}
+							{this.state.lifeList}
 						</ul>
-					</Scroller>
-				</div>
-				<div className="ad2">
-					<Link to="/"><img src={this.state.adList2} /></Link>
-				</div>
-				<div className="like">
-					<img src={this.state.like} />
-				</div>
-				<div className="like-list">
-					<ul>
-						{this.state.likeList}
-					</ul>
-				</div>
-			
+					</div>
+					<div className="hothove">
+						<span>热荐商家</span>
+						<span className="produs">康缘蜂产品店</span>
+					</div>
+					<div className="hothove-list">
+						<Scroller scrollX ={true}   bounce={false}>
+							<ul>
+								{this.state.hothove}
+							</ul>
+						</Scroller>
+					</div>
+					<div className="ad2">
+						<Link to="/"><img src={this.state.adList2} /></Link>
+					</div>
+					<div className="like">
+						<img src={this.state.like} />
+					</div>
+					<div className="like-list">
+						<ul>
+							{this.state.likeList}
+						</ul>
+					</div>
+				</Scroller>
 			</div>
 		)
 	}

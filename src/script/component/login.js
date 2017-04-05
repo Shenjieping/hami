@@ -119,7 +119,7 @@ class Login extends React.Component{
 		      		<Link to="/register" className="affirm">注册</Link>
 				</header>
 				<ul className="select">
-					<li className="active"><Link to=""><img src={hamiLogin} /><span>黄瓜街账号登录</span></Link></li>
+					<li className="active"><Link to=""><img src={hamiLogin} /><span>哈密街账号登录</span></Link></li>
 					<li><Link to="/loginmobal"><img src={mobalLogin} className="lo" /><span>手机号登录</span></Link></li>
 				</ul>
 				<div className="natouch">
