@@ -109,8 +109,7 @@ class Cart extends React.Component {
 				.catch((e) => {
 					console.log(e.message)
 				})
-			
-			
+
 		}else{
 			window.location.href="#/login"
 		}
