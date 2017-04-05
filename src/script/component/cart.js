@@ -113,7 +113,6 @@ class Cart extends React.Component {
 					console.log(e.message)
 				})
 		
-			})
 		}else{
 			window.location.href="#/login"
 		}
